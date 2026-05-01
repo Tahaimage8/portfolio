@@ -68,19 +68,21 @@ export default function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className={`relative text-[13px] font-bold uppercase tracking-widest transition-all duration-300 hover:text-white ${
+                  className={`group relative text-[13px] font-bold uppercase tracking-widest transition-all duration-300 hover:text-white ${
                     activeSection === link.name.toLowerCase()
                       ? "text-white"
                       : "text-gray-500"
                   }`}
                 >
                   {link.name}
-                  {activeSection === link.name.toLowerCase() && (
+                  {activeSection === link.name.toLowerCase() ? (
                     <motion.div
                       layoutId="navUnderline"
                       className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-500 to-purple-500"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
+                  ) : (
+                    <div className="absolute -bottom-2 left-0 w-0 h-[2px] bg-white/30 transition-all duration-300 group-hover:w-full" />
                   )}
                 </a>
               </li>

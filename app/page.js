@@ -18,7 +18,7 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
 
-      <main>
+      <main className="w-full">
         <Hero />
         <TechMarquee />
         <About />

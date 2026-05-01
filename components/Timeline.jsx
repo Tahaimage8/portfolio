@@ -54,10 +54,10 @@ export default function Timeline() {
             {timelineEvents.map((event, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: i * 0.2 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 80, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: i * 0.15, type: "spring", stiffness: 100 }}
+                viewport={{ once: true, margin: "-100px" }}
                 className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
               >
                 {/* Dot */}

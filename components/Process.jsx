@@ -61,10 +61,10 @@ export default function Process() {
           {steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.15, type: "spring", bounce: 0.4 }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-col items-center text-center group"
             >
               <div className={`w-32 h-32 rounded-[40px] ${step.color} flex items-center justify-center mb-8 transition-all duration-700 group-hover:scale-110 group-hover:rotate-[360deg] shadow-2xl border border-white/5 relative`}>

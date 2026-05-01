@@ -107,7 +107,7 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group relative h-full w-full"
             >
-              <div className="relative glass rounded-[32px] overflow-hidden border border-white/5 transition-all duration-700 hover:border-white/10 flex flex-col h-full w-full">
+              <div className="relative glass rounded-[32px] overflow-hidden border border-white/5 transition-all duration-700 hover:border-white/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.15)] flex flex-col h-full w-full">
                 {/* Project Image Container */}
                 <div className="relative h-[240px] md:h-[280px] w-full overflow-hidden shrink-0">
                   <Image
@@ -130,7 +130,7 @@ export default function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="p-8 flex flex-col flex-grow relative">
+                <div className="p-8 flex flex-col flex-grow relative z-10">
                   <div className="flex justify-between items-start gap-4 mb-6">
                     <h3 className="text-2xl font-black text-white tracking-tight">
                       {project.title}
@@ -178,7 +178,7 @@ export default function Projects() {
                 </div>
                 
                 {/* Hover Glow Effect */}
-                <div className="absolute -inset-px bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute -inset-px bg-gradient-to-r from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[32px] blur-sm z-0" />
               </div>
             </motion.div>
           ))}

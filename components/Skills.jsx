@@ -105,24 +105,37 @@ export default function Skills() {
                 <h3 className="text-xl font-black text-white mb-2">{category.title}</h3>
                 <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-8">{category.desc}</p>
                 
-                <div className="grid grid-cols-2 gap-4 mt-auto">
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: { staggerChildren: 0.1 }
+                    }
+                  }}
+                  className="grid grid-cols-2 gap-4 mt-auto"
+                >
                   {category.skills.map((skill, i) => (
                     <motion.div
                       key={i}
-                      whileHover={{ y: -5 }}
-                      className="flex flex-col items-center justify-center p-4 rounded-[20px] glass-card group/item"
+                      variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } } }}
+                      whileHover={{ y: -5, scale: 1.05 }}
+                      className="flex flex-col items-center justify-center p-4 rounded-[20px] glass-card group/item hover:shadow-[0_10px_20px_-10px_rgba(255,255,255,0.1)] transition-shadow"
                     >
                       <skill.icon 
                         size={32} 
                         style={{ color: skill.color }} 
-                        className="mb-3 transition-all duration-500 group-hover/item:scale-110"
+                        className="mb-3 transition-all duration-500 group-hover/item:scale-110 drop-shadow-md"
                       />
                       <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-tighter text-gray-500 group-hover/item:text-white transition-colors text-center">
                         {skill.name}
                       </span>
                     </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}

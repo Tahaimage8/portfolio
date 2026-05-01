@@ -13,23 +13,36 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden py-20 md:py-28">
       {/* Background Orbs */}
-      <div className="absolute top-1/4 -left-20 w-100 h-100 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <motion.div 
+        animate={{ y: [0, -40, 0], scale: [1, 1.1, 1] }} 
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" 
+      />
+      <motion.div 
+        animate={{ y: [0, 40, 0], scale: [1, 1.2, 1] }} 
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none" 
+      />
 
       <Container className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 min-h-screen">
           
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+              }
+            }}
             className="text-center lg:text-left order-1"
           >
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
@@ -38,22 +51,34 @@ export default function Hero() {
               </span>
             </motion.div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-8">
+            <motion.h1 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-8"
+            >
               Building Modern <br />
               <span className="text-gradient">Web Experiences</span> <br />
               With Clean Code
-            </h1>
+            </motion.h1>
             
-            <p className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium">
+            <motion.p 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium"
+            >
               I’m Ibtesam Taha, a frontend-focused developer learning full-stack development through 
               <span className="text-white font-bold ml-1">Programming Hero</span>. 
               I craft responsive and modern web applications with a focus on performance.
-            </p>
+            </motion.p>
             
-            <div className="flex flex-wrap justify-center lg:justify-start gap-5 mb-16">
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-wrap justify-center lg:justify-start gap-5 mb-16"
+            >
               <motion.a
                 href="#projects"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="px-10 py-5 bg-white text-dark font-black rounded-2xl flex items-center gap-3 transition-transform btn-shine shadow-2xl shadow-white/5"
               >
@@ -61,16 +86,20 @@ export default function Hero() {
               </motion.a>
               <motion.a
                 href="#contact"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="px-10 py-5 glass border-white/10 text-white font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-white/5"
               >
                 Contact Me
               </motion.a>
-            </div>
+            </motion.div>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0 pt-12 border-t border-white/5">
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0 pt-12 border-t border-white/5"
+            >
               {[
                 { val: "10+", label: "Projects" },
                 { val: "95%", label: "Course" },
@@ -81,7 +110,7 @@ export default function Hero() {
                   <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">{stat.label}</span>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Content - Profile Image Area */}
