@@ -14,25 +14,29 @@ import SectionDivider from "@/components/SectionDivider";
 
 export default function Home() {
   return (
-    <main className=" bg-dark text-white">
+    <>
       <ScrollProgress />
       <Navbar />
-      <Hero />
-      <TechMarquee />
-      <About />
-      <SectionDivider />
-      <Skills />
-      <SectionDivider />
-      <Projects />
-      <SectionDivider />
-      <Process />
-      <SectionDivider />
-      <Timeline />
-      <SectionDivider />
-      <Services />
-      <SectionDivider />
-      <Contact />
+
+      <main>
+        <Hero />
+        <TechMarquee />
+        <About />
+        <SectionDivider />
+        <Skills />
+        <SectionDivider />
+        <Projects />
+        <SectionDivider />
+        <Process />
+        <SectionDivider />
+        <Timeline />
+        <SectionDivider />
+        <Services />
+        <SectionDivider />
+        <Contact />
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }
