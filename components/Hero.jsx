@@ -24,7 +24,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left order-1"
           >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -89,7 +89,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex justify-center items-center order-1 lg:order-2"
+            className="relative flex justify-center items-center order-2"
           >
             {/* Background Glows */}
             <div className="absolute w-[80%] h-[80%] bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 rounded-full blur-[100px] animate-pulse" />

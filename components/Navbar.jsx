@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import Container from "./Container";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -49,7 +50,7 @@ export default function Navbar() {
         scrolled ? "py-4 glass border-b border-white/5" : "py-8 bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+      <Container className="flex justify-between items-center">
         <motion.a
           href="#home"
           initial={{ opacity: 0, x: -20 }}
@@ -109,7 +110,7 @@ export default function Navbar() {
         >
           {isOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
         </button>
-      </div>
+      </Container>
 
       {/* Mobile Menu */}
       <AnimatePresence>
