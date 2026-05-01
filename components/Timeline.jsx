@@ -46,7 +46,7 @@ export default function Timeline() {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative">
           {/* Vertical Line */}
           <div className="absolute left-4 md:left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2" />
           

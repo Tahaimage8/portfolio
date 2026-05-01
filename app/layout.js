@@ -13,11 +13,11 @@ export default function RootLayout({ children }) {
       <body className="antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
         <SmoothScroll>
           <Cursor />
-          <div className="relative min-h-screen overflow-hidden">
+          <div className="relative  mx-auto ">
             {/* Global Gradient Backgrounds */}
-            <div className="glow-aura w-[500px] h-[500px] bg-cyan-500/10 -top-20 -left-20 animate-glow" />
-            <div className="glow-aura w-[600px] h-[600px] bg-purple-500/10 top-1/2 -right-20 animate-glow" style={{ animationDelay: "-2s" }} />
-            <div className="glow-aura w-[400px] h-[400px] bg-blue-500/10 bottom-0 left-1/4 animate-glow" style={{ animationDelay: "-4s" }} />
+            <div className="glow-aura w-auto h-auto bg-cyan-500/10 -top-20 -left-20 animate-glow" />
+            <div className="glow-aura w-auto h-auto bg-purple-500/10 top-1/2 -right-20 animate-glow" style={{ animationDelay: "-2s" }} />
+            <div className="glow-aura w-auto h-auto bg-blue-500/10 bottom-0 left-1/4 animate-glow" style={{ animationDelay: "-4s" }} />
             
             {children}
           </div>
