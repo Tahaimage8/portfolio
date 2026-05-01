@@ -34,7 +34,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="process" className="relative overflow-hidden py-20 md:py-28">
       <Container>
         <div className="text-center mb-16 md:mb-24">
           <motion.div

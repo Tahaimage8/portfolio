@@ -28,7 +28,7 @@ const aboutCards = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="about" className="relative overflow-hidden py-20 md:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           

@@ -8,7 +8,7 @@ import Container from "./Container";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="contact" className="relative overflow-hidden py-20 md:py-28">
       <Container className="relative z-10">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           

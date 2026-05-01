@@ -51,7 +51,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="projects" className="relative overflow-hidden py-20 md:py-28">
       <Container>
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
           <div className="max-w-3xl text-center lg:text-left mx-auto lg:mx-0">

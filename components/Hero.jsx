@@ -11,13 +11,13 @@ export default function Hero() {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <section id="home" className="relative py-20 md:py-28 overflow-hidden min-h-screen flex items-center">
+    <section id="home" className="relative overflow-hidden py-20 md:py-28">
       {/* Background Orbs */}
       <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <Container className="relative z-10 w-full">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 min-h-screen">
           
           {/* Left Content */}
           <motion.div

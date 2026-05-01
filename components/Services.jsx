@@ -27,7 +27,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="services" className="relative overflow-hidden py-20 md:py-28">
       <Container>
         <div className="text-center mb-16 md:mb-24">
           <motion.div

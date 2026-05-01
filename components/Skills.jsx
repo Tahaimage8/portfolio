@@ -56,7 +56,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="skills" className="relative overflow-hidden py-20 md:py-28">
       {/* Decorative Gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-500/5 blur-[150px] pointer-events-none" />
 
