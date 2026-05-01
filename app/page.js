@@ -14,7 +14,7 @@ import SectionDivider from "@/components/SectionDivider";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#020617] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-dark text-white">
       <ScrollProgress />
       <Navbar />
       <Hero />
@@ -36,4 +36,3 @@ export default function Home() {
     </main>
   );
 }
-
