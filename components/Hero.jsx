@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden py-20 md:py-28">
       {/* Background Orbs */}
-      <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-100 h-100 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <Container className="relative z-10 w-full">
