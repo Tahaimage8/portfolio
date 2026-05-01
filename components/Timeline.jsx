@@ -7,8 +7,8 @@ const timelineEvents = [
   {
     year: "2024 - Present",
     title: "MERN Stack Specialist",
-    org: "Programming Hero",
-    desc: "Intensive training on MongoDB, Express.js, React, and Node.js. Architecting complex full-stack applications with modern best practices."
+    org: "Self-Taught Mastery",
+    desc: "Intensive focus on MongoDB, Express.js, React, and Node.js. Architecting complex full-stack applications with modern best practices."
   },
   {
     year: "2023",

@@ -7,21 +7,21 @@ import Container from "./Container";
 
 const aboutCards = [
   {
-    icon: HiOutlineAcademicCap,
-    title: "Learning Path",
-    description: "Currently completing the Programming Hero Web Development Course with a focus on MERN.",
+    icon: HiOutlineLightningBolt,
+    title: "3+ Projects",
+    description: "Built real-world applications including Artiva AI.",
     color: "text-cyan-400"
   },
   {
-    icon: HiOutlineLightningBolt,
-    title: "Growth Mindset",
-    description: "Driven by a passion for solving complex problems and continuously upgrading skills.",
+    icon: HiOutlineAcademicCap,
+    title: "MERN Stack",
+    description: "Expertise in React, Next.js, Node.js, and MongoDB.",
     color: "text-purple-400"
   },
   {
     icon: FaBullseye,
-    title: "Future Goal",
-    description: "Aiming to become a professional Full-Stack Developer creating impactful solutions.",
+    title: "Remote Ready",
+    description: "Prepared for freelance and startup environments.",
     color: "text-blue-400"
   }
 ];
@@ -55,7 +55,7 @@ export default function About() {
                 <div className="space-y-8">
                   {[
                     { label: "Frontend Architecture", val: "92%", color: "bg-cyan-500", shadow: "shadow-cyan-500/20" },
-                    { label: "MERN Stack Progress", val: "85%", color: "bg-purple-500", shadow: "shadow-purple-500/20" },
+                    { label: "MERN Stack Expertise", val: "85%", color: "bg-purple-500", shadow: "shadow-purple-500/20" },
                     { label: "UI/UX & Animations", val: "88%", color: "bg-blue-500", shadow: "shadow-blue-500/20" }
                   ].map((skill, i) => (
                     <div key={i} className="space-y-3">
@@ -106,18 +106,45 @@ export default function About() {
             >
               Who I Am
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-8 leading-tight tracking-tight">
-              Passionate About <br className="hidden sm:block" />
-              <span className="text-gradient">Problem Solving</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 leading-tight tracking-tight">
+              Dedicated to <br className="hidden sm:block" />
+              <span className="text-gradient">Clean Development</span>
             </h2>
-            <p className="text-gray-400 text-base md:text-lg mb-12 leading-7 font-medium max-w-2xl mx-auto lg:mx-0">
-              Based in Bangladesh, I am a dedicated developer learning through 
-              <span className="text-white font-bold mx-1">Programming Hero</span>. 
-              My journey is fueled by a curiosity for crafting high-performance 
-              digital experiences using the latest web technologies.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-gray-400 text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 lg:text-left text-center"
+            >
+              AI-Assisted Development • Modern Web Apps • MERN Stack
+            </motion.p>
             
-            <div className="grid gap-6">
+            <motion.div 
+              initial="hidden" 
+              whileInView="visible" 
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+              }}
+              className="space-y-6 text-gray-400 text-base md:text-lg leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 mb-12 text-center lg:text-left"
+            >
+              <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+                I am a passionate <span className="text-white font-bold">Full Stack Developer (MERN)</span> focused on building clean, responsive, and user-friendly web applications.
+              </motion.p>
+              <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+                As a self-taught developer, I continuously improve my skills by building real-world projects using React, Next.js, Node.js, Express.js, and MongoDB. I also leverage modern AI tools to enhance my development workflow, improve productivity, and build smarter user experiences.
+              </motion.p>
+              <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+                I have built 3+ projects, including <span className="text-cyan-400 font-bold">Artiva</span> — an AI-powered image application. My strengths include clean UI design, problem-solving, and the ability to learn and adapt quickly.
+              </motion.p>
+              <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+                I am a focused and disciplined learner, aiming to become a production-level developer. My goal is to work on real-world products, collaborate with teams, and grow through remote opportunities, freelancing, and startup environments.
+              </motion.p>
+            </motion.div>
+            
+            {/* 3 Minimal Highlight Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
               {aboutCards.map((card, i) => (
                 <motion.div
                   key={i}
@@ -125,14 +152,15 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8 p-6 sm:p-8 glass-card rounded-[32px] hover:translate-x-0 lg:hover:translate-x-3 transition-all duration-500 group"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="flex flex-col items-center text-center gap-4 p-6 glass-card rounded-[24px] hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.15)] hover:border-white/10 transition-all duration-300 group"
                 >
-                  <div className={`p-4 rounded-2xl glass border-white/5 transition-colors group-hover:bg-white/5 ${card.color} shrink-0`}>
+                  <div className={`p-4 rounded-2xl glass border-white/5 transition-colors group-hover:bg-white/10 ${card.color}`}>
                     <card.icon size={28} />
                   </div>
                   <div>
-                    <h4 className="text-lg sm:text-xl font-black text-white mb-2 tracking-tight">{card.title}</h4>
-                    <p className="text-gray-500 leading-relaxed font-medium text-sm sm:text-base">{card.description}</p>
+                    <h4 className="text-base sm:text-lg font-black text-white mb-2 tracking-tight">{card.title}</h4>
+                    <p className="text-gray-500 leading-relaxed font-medium text-xs sm:text-sm">{card.description}</p>
                   </div>
                 </motion.div>
               ))}

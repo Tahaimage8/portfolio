@@ -66,9 +66,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium"
             >
-              I’m Ibtesam Taha, a frontend-focused developer learning full-stack development through 
-              <span className="text-white font-bold ml-1">Programming Hero</span>. 
-              I craft responsive and modern web applications with a focus on performance.
+              I’m Ibtesam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Developer (MERN)</span>. 
+              I craft responsive and modern web applications with a focus on clean UI and performance.
             </motion.p>
             
             <motion.div 
