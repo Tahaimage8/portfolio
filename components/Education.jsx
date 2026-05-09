@@ -12,7 +12,7 @@ export default function Education() {
       institution: "Dr. Mahbubur Rahman Mollah Institute of Science & Technology, Dhaka",
       status: "Ongoing",
       batch: "25-26",
-      focus: "Computer Science & Technology",
+      department: "Computer Science & Technology",
       icon: HiOutlineAcademicCap,
       color: "cyan",
       accent: "bg-cyan-500"
@@ -107,10 +107,11 @@ export default function Education() {
                           <span className="text-white font-bold">{item.batch}</span>
                         </div>
                       )}
-                      {item.focus && (
+                      {item.department && (
                         <div className="flex flex-col">
-                          <span className="text-gray-500 text-[10px] uppercase font-black tracking-widest mb-1">Focus</span>
-                          <span className="text-white font-bold">{item.focus}</span>
+                          <span className="text-gray-500 text-[10px] uppercase font-black tracking-widest mb-1">Department
+</span>
+                          <span className="text-white font-bold">{item.department}</span>
                         </div>
                       )}
                       {item.group && (
