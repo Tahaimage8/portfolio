@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { 
   SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss,
   SiNodedotjs, SiExpress, SiMongodb, SiFirebase, SiFramer, SiGreensock,
@@ -9,52 +10,51 @@ import {
 import { VscCode } from "react-icons/vsc";
 import Container from "./Container";
 
-const skillCategories = [
-  {
-    title: "Frontend Mastery",
-    desc: "Crafting pixel-perfect user interfaces",
-    skills: [
-      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: SiCss, color: "#1572B6" },
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
-      { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
-    ]
-  },
-  {
-    title: "Motion & UX",
-    desc: "Bringing static designs to life",
-    skills: [
-      { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
-      { name: "GSAP", icon: SiGreensock, color: "#88CE02" },
-      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-      { name: "UI Design", icon: VscCode, color: "#ffffff" },
-    ]
-  },
-  {
-    title: "Backend (Focus)",
-    desc: "Learning the MERN ecosystem",
-    skills: [
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Express", icon: SiExpress, color: "#ffffff" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-    ]
-  },
-  {
-    title: "Dev Ecosystem",
-    desc: "Tools I use daily",
-    skills: [
-      { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "GitHub", icon: SiGithub, color: "#ffffff" },
-      { name: "VS Code", icon: VscCode, color: "#007ACC" },
-      { name: "Vercel", icon: SiVercel, color: "#ffffff" },
-    ]
-  }
-];
-
 export default function Skills() {
+  const skillCategories = useMemo(() => [
+    {
+      title: "Frontend Mastery",
+      desc: "Crafting pixel-perfect user interfaces",
+      skills: [
+        { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+        { name: "CSS3", icon: SiCss, color: "#1572B6" },
+        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+        { name: "React", icon: SiReact, color: "#61DAFB" },
+        { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+        { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
+      ]
+    },
+    {
+      title: "Motion & UX",
+      desc: "Bringing static designs to life",
+      skills: [
+        { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
+        { name: "GSAP", icon: SiGreensock, color: "#88CE02" },
+        { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+        { name: "UI Design", icon: VscCode, color: "#ffffff" },
+      ]
+    },
+    {
+      title: "Backend (Focus)",
+      desc: "Learning the MERN ecosystem",
+      skills: [
+        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "Express", icon: SiExpress, color: "#ffffff" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      ]
+    },
+    {
+      title: "Dev Ecosystem",
+      desc: "Tools I use daily",
+      skills: [
+        { name: "Git", icon: SiGit, color: "#F05032" },
+        { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+        { name: "VS Code", icon: VscCode, color: "#007ACC" },
+        { name: "Vercel", icon: SiVercel, color: "#ffffff" },
+      ]
+    }
+  ], []);
   return (
     <section id="skills" className="relative overflow-hidden py-20 md:py-28">
       {/* Decorative Gradient */}
@@ -99,7 +99,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group relative h-full"
+              className="group relative h-full will-change-transform"
             >
               <div className="glass p-8 rounded-[32px] h-full border border-white/5 group-hover:border-white/10 transition-all duration-500 flex flex-col">
                 <h3 className="text-xl font-black text-white mb-2">{category.title}</h3>

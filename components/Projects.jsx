@@ -1,55 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineExternalLink, HiOutlineCode, HiArrowRight } from "react-icons/hi";
 import Image from "next/image";
 import Container from "./Container";
 
-const projects = [
-  {
-    title: "SkillSphere",
-    description: "A comprehensive Online Learning Management System with course categorization, enrollment tracking, and a modern student dashboard.",
-    tech: ["React", "Firebase", "Tailwind", "DaisyUI"],
-    github: "https://github.com/tahaimage8/skill-sphere",
-    live: "https://tskillsphere-ibtesam.vercel.app/",
-    image: "/projects/skillsphere.png"
-  },
-  {
-    title: "Artiva AI",
-    description: "An AI-powered Art Generation platform featuring a clean UI for creative prompt processing and high-end gallery display.",
-    tech: ["React", "Next.js", "AI Integration", "Framer Motion"],
-    github: "https://github.com/tahaimage8/artiva-art-gallery",
-    live: "https://artiva-ai.vercel.app/",
-    image: "/projects/artiva.png"
-  },
-  {
-    title: "KeenKeeper",
-    description: "A professional productivity suite for task management, note-taking, and efficient organization with a focus on UX.",
-    tech: ["React", "Tailwind", "Lucide", "Context API"],
-    github: "https://github.com/tahaimage8/keen-keeper",
-    live: "https://assienment-7-77.vercel.app/",
-    image: "/projects/keenkeeper.png"
-  },
-  {
-    title: "BookVibe",
-    description: "A social platform for book enthusiasts to discover, review, and organize their personal reading lists.",
-    tech: ["React", "Router", "Tailwind", "Local Storage"],
-    github: "https://github.com/tahaimage8/book-vibe",
-    live: "https://bookvibe1111.netlify.app/",
-    image: "/projects/bookvibe.png"
-  },
-  {
-    title: "DigiTools",
-    description: "A modern e-commerce marketplace for digital assets with optimized product filtering and cart functionality.",
-    tech: ["React", "Tailwind", "State Management"],
-    github: "https://github.com/tahaimage8/assienment-6",
-    live: "https://digitoolsll.netlify.app/",
-    image: "/projects/digitools.png"
-  }
-];
-
 export default function Projects() {
+  const projects = useMemo(() => [
+    {
+      title: "SkillSphere",
+      description: "A comprehensive Online Learning Management System with course categorization, enrollment tracking, and a modern student dashboard.",
+      tech: ["React", "Firebase", "Tailwind", "DaisyUI"],
+      github: "https://github.com/tahaimage8/skill-sphere",
+      live: "https://tskillsphere-ibtesam.vercel.app/",
+      image: "/projects/skillsphere.png"
+    },
+    {
+      title: "Artiva AI",
+      description: "An AI-powered Art Generation platform featuring a clean UI for creative prompt processing and high-end gallery display.",
+      tech: ["React", "Next.js", "AI Integration", "Framer Motion"],
+      github: "https://github.com/tahaimage8/artiva-art-gallery",
+      live: "https://artiva-ai.vercel.app/",
+      image: "/projects/artiva.png"
+    },
+    {
+      title: "KeenKeeper",
+      description: "A professional productivity suite for task management, note-taking, and efficient organization with a focus on UX.",
+      tech: ["React", "Tailwind", "Lucide", "Context API"],
+      github: "https://github.com/tahaimage8/keen-keeper",
+      live: "https://assienment-7-77.vercel.app/",
+      image: "/projects/keenkeeper.png"
+    },
+    {
+      title: "BookVibe",
+      description: "A social platform for book enthusiasts to discover, review, and organize their personal reading lists.",
+      tech: ["React", "Router", "Tailwind", "Local Storage"],
+      github: "https://github.com/tahaimage8/book-vibe",
+      live: "https://bookvibe1111.netlify.app/",
+      image: "/projects/bookvibe.png"
+    },
+    {
+      title: "DigiTools",
+      description: "A modern e-commerce marketplace for digital assets with optimized product filtering and cart functionality.",
+      tech: ["React", "Tailwind", "State Management"],
+      github: "https://github.com/tahaimage8/assienment-6",
+      live: "https://digitoolsll.netlify.app/",
+      image: "/projects/digitools.png"
+    }
+  ], []);
   return (
     <section id="projects" className="relative overflow-hidden py-20 md:py-28">
       <Container>

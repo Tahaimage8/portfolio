@@ -1,8 +1,9 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 
-export default function SectionDivider() {
+const SectionDivider = memo(() => {
   return (
     <div className="w-full flex justify-center py-8">
       <motion.div
@@ -14,4 +15,7 @@ export default function SectionDivider() {
       />
     </div>
   );
-}
+});
+
+SectionDivider.displayName = "SectionDivider";
+export default SectionDivider;

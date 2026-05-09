@@ -1,38 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { HiOutlineLightBulb, HiOutlinePencilAlt, HiOutlineCode } from "react-icons/hi";
 import { FaRocket } from "react-icons/fa";
 import Container from "./Container";
 
-const steps = [
-  {
-    icon: HiOutlineLightBulb,
-    title: "Discovery & Ideation",
-    desc: "Understanding core requirements and brainstorming creative solutions to solve complex problems.",
-    color: "bg-yellow-500/10 text-yellow-500"
-  },
-  {
-    icon: HiOutlinePencilAlt,
-    title: "Strategic Design",
-    desc: "Creating high-fidelity UI designs with a focus on usability, accessibility, and modern aesthetics.",
-    color: "bg-purple-500/10 text-purple-500"
-  },
-  {
-    icon: HiOutlineCode,
-    title: "Clean Development",
-    desc: "Writing modular, performant code using React, Next.js, and best practices in frontend engineering.",
-    color: "bg-cyan-500/10 text-cyan-400"
-  },
-  {
-    icon: FaRocket,
-    title: "Launch & Optimize",
-    desc: "Rigorous testing, performance tuning, and deploying to high-availability production environments.",
-    color: "bg-green-500/10 text-green-500"
-  }
-];
-
 export default function Process() {
+  const steps = useMemo(() => [
+    {
+      icon: HiOutlineLightBulb,
+      title: "Discovery & Ideation",
+      desc: "Understanding core requirements and brainstorming creative solutions to solve complex problems.",
+      color: "bg-yellow-500/10 text-yellow-500"
+    },
+    {
+      icon: HiOutlinePencilAlt,
+      title: "Strategic Design",
+      desc: "Creating high-fidelity UI designs with a focus on usability, accessibility, and modern aesthetics.",
+      color: "bg-purple-500/10 text-purple-500"
+    },
+    {
+      icon: HiOutlineCode,
+      title: "Clean Development",
+      desc: "Writing modular, performant code using React, Next.js, and best practices in frontend engineering.",
+      color: "bg-cyan-500/10 text-cyan-400"
+    },
+    {
+      icon: FaRocket,
+      title: "Launch & Optimize",
+      desc: "Rigorous testing, performance tuning, and deploying to high-availability production environments.",
+      color: "bg-green-500/10 text-green-500"
+    }
+  ], []);
   return (
     <section id="process" className="relative overflow-hidden py-20 md:py-28">
       <Container>
@@ -65,9 +65,9 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: i * 0.15, type: "spring", bounce: 0.4 }}
               viewport={{ once: true, margin: "-50px" }}
-              className="flex flex-col items-center text-center group"
+              className="flex flex-col items-center text-center group will-change-transform"
             >
-              <div className={`w-32 h-32 rounded-[40px] ${step.color} flex items-center justify-center mb-8 transition-all duration-700 group-hover:scale-110 group-hover:rotate-[360deg] shadow-2xl border border-white/5 relative`}>
+              <div className={`w-32 h-32 rounded-[40px] ${step.color} flex items-center justify-center mb-8 transition-all duration-700 group-hover:scale-110 group-hover:rotate-[360deg] shadow-2xl border border-white/5 relative will-change-transform`}>
                 <step.icon size={48} />
                 {/* Step Number */}
                 <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full glass border border-white/10 flex items-center justify-center text-xs font-black text-white shadow-xl">

@@ -1,12 +1,13 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from "react-icons/hi";
 import { FiSend } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import Container from "./Container";
 
-export default function Contact() {
+const Contact = memo(() => {
   return (
     <section id="contact" className="relative overflow-hidden py-20 md:py-28">
       <Container className="relative z-10">
@@ -18,13 +19,13 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left will-change-transform"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-1.5 glass rounded-full text-cyan-400 text-[10px] uppercase tracking-[0.3em] font-black mb-6"
+              className="inline-block px-4 py-1.5 glass rounded-full text-cyan-400 text-[10px] uppercase tracking-[0.3em] font-black mb-6 will-change-transform"
             >
               Get In Touch
             </motion.div>
@@ -68,7 +69,7 @@ export default function Contact() {
                   href={social.href}
                   target="_blank"
                   whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[20px] sm:rounded-[24px] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-500 border border-white/5"
+                  className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[20px] sm:rounded-[24px] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-500 border border-white/5 will-change-transform"
                   title={social.label}
                 >
                   <social.icon size={20} className="sm:hidden" />
@@ -84,7 +85,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative w-full"
+            className="relative w-full will-change-transform"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-[32px] sm:rounded-[50px] blur opacity-10 pointer-events-none" />
             <div className="relative glass p-8 sm:p-12 lg:p-16 rounded-[32px] sm:rounded-[50px] border border-white/5">
@@ -129,7 +130,7 @@ export default function Contact() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-5 bg-white text-dark font-black rounded-2xl flex items-center justify-center gap-3 shadow-2xl transition-transform btn-shine text-sm sm:text-base"
+                  className="w-full py-5 bg-white text-dark font-black rounded-2xl flex items-center justify-center gap-3 shadow-2xl transition-transform btn-shine text-sm sm:text-base will-change-transform"
                 >
                   SEND MESSAGE <FiSend size={20} />
                 </motion.button>
@@ -144,5 +145,8 @@ export default function Contact() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
     </section>
   );
-}
+});
+
+Contact.displayName = "Contact";
+export default Contact;
 

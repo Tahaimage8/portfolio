@@ -1,10 +1,11 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { HiArrowSmUp } from "react-icons/hi";
 import Container from "./Container";
 
-export default function Footer() {
+const Footer = memo(() => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -20,7 +21,7 @@ export default function Footer() {
             <motion.a 
               href="#home" 
               whileHover={{ scale: 1.05 }}
-              className="text-3xl font-black text-white tracking-[0.2em] mb-4 block"
+              className="text-3xl font-black text-white tracking-[0.2em] mb-4 block will-change-transform"
             >
               IBTESAM<span className="text-cyan-500">.</span>
             </motion.a>
@@ -46,7 +47,7 @@ export default function Footer() {
             onClick={scrollToTop}
             whileHover={{ y: -5, scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-14 h-14 sm:w-16 sm:h-16 rounded-[20px] sm:rounded-[24px] glass flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-500 group border border-white/5"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-[20px] sm:rounded-[24px] glass flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-500 group border border-white/5 will-change-transform"
             title="Scroll to Top"
           >
             <HiArrowSmUp size={24} className="sm:hidden group-hover:animate-bounce" />
@@ -60,5 +61,8 @@ export default function Footer() {
       <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full h-40 bg-cyan-500/5 blur-[100px] pointer-events-none" />
     </footer>
   );
-}
+});
+
+Footer.displayName = "Footer";
+export default Footer;
 

@@ -1,4 +1,6 @@
-export default function Container({ children, className = "" }) {
+import { memo } from "react";
+
+const Container = memo(({ children, className = "" }) => {
   return (
     <div
       className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}
@@ -6,4 +8,7 @@ export default function Container({ children, className = "" }) {
       {children}
     </div>
   );
-}
+});
+
+Container.displayName = "Container";
+export default Container;

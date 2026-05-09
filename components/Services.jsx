@@ -1,33 +1,104 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HiOutlineDesktopComputer, HiOutlineTemplate, HiOutlineDeviceMobile, HiOutlineCheckCircle } from "react-icons/hi";
+import { useState, useMemo } from "react";
+import { 
+  HiOutlineDesktopComputer, 
+  HiOutlineServer, 
+  HiOutlineGlobeAlt,
+  HiOutlineCheckCircle,
+  HiArrowRight
+} from "react-icons/hi";
 import Container from "./Container";
-
-const services = [
-  {
-    icon: HiOutlineDesktopComputer,
-    title: "Frontend Engineering",
-    desc: "Building fast, responsive, and accessible user interfaces using modern frameworks like React and Next.js.",
-    features: ["Component-based Architecture", "SEO Optimization", "Performance Tuning"]
-  },
-  {
-    icon: HiOutlineTemplate,
-    title: "UI/UX Translation",
-    desc: "Translating complex designs into pixel-perfect code while ensuring a smooth, intuitive user experience.",
-    features: ["Responsive Layouts", "Interactive Prototypes", "Modern Aesthetics"]
-  },
-  {
-    icon: HiOutlineDeviceMobile,
-    title: "Responsive Solutions",
-    desc: "Ensuring your digital product looks great and functions perfectly on all devices, from mobile to desktop.",
-    features: ["Mobile-first Approach", "Cross-browser Support", "Adaptive Design"]
-  }
-];
+import ServiceModal from "./ServiceModal";
 
 export default function Services() {
+  const services = useMemo(() => [
+    {
+      icon: HiOutlineDesktopComputer,
+      title: "Frontend Development",
+      desc: "Building clean, responsive, and user-friendly interfaces using React.js, Next.js, Tailwind CSS, and modern frontend practices.",
+      points: [
+        "React & Next.js UI",
+        "Responsive Layouts",
+        "Clean Component Structure"
+      ],
+      details: [
+        "React.js interface development",
+        "Next.js application structure",
+        "Tailwind CSS responsive design",
+        "Reusable component architecture",
+        "Modern UI implementation",
+        "Mobile-first responsive layout",
+        "UI optimization and clean code practice",
+        "Dynamic routing",
+        "Smooth animations",
+        "Interactive frontend experiences"
+      ],
+      color: "from-cyan-500 to-blue-600",
+      shadow: "shadow-cyan-500/20"
+    },
+    {
+      icon: HiOutlineServer,
+      title: "Backend Development",
+      desc: "Developing backend APIs and database-connected systems using Node.js, Express.js, MongoDB, and Firebase.",
+      points: [
+        "REST API Development",
+        "MongoDB Integration",
+        "Firebase Authentication"
+      ],
+      details: [
+        "Node.js backend development",
+        "Express.js REST API development",
+        "MongoDB database integration",
+        "Firebase authentication system",
+        "CRUD functionality",
+        "API routing and middleware",
+        "Secure backend structure",
+        "Backend logic organization",
+        "Real-world backend workflow"
+      ],
+      color: "from-purple-500 to-indigo-600",
+      shadow: "shadow-purple-500/20"
+    },
+    {
+      icon: HiOutlineGlobeAlt,
+      title: "Full Stack Web Apps",
+      desc: "Creating complete web applications with frontend, backend, authentication, database, and deployment-ready architecture.",
+      points: [
+        "Frontend + Backend Integration",
+        "Authentication System",
+        "Deployment Ready Apps"
+      ],
+      details: [
+        "Complete frontend + backend integration",
+        "Authentication systems",
+        "Database-connected applications",
+        "API integration",
+        "Responsive dashboard/web app structure",
+        "Deployment-ready architecture",
+        "Full application workflow",
+        "Modern stack workflow",
+        "End-to-end application development"
+      ],
+      color: "from-blue-500 to-cyan-600",
+      shadow: "shadow-blue-500/20"
+    }
+  ], []);
+
+  const [selectedService, setSelectedService] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (service) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="services" className="relative overflow-hidden py-20 md:py-28">
+      {/* Background Decorative Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-500/5 blur-[150px] pointer-events-none" />
+
       <Container>
         <div className="text-center mb-16 md:mb-24">
           <motion.div
@@ -36,18 +107,29 @@ export default function Services() {
             viewport={{ once: true }}
             className="inline-block px-4 py-1.5 glass rounded-full text-cyan-400 text-[10px] uppercase tracking-[0.3em] font-black mb-6"
           >
-            My Offerings
+            Hire Me For
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 leading-tight">
-            What I <span className="text-gradient">Deliver</span>
-          </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-7 font-medium">
-            I provide high-quality development services tailored to modern business 
-            needs and user expectations.
-          </p>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 leading-tight"
+          >
+            My Expert <span className="text-gradient">Services</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-7 font-medium"
+          >
+            I build modern, responsive, and scalable web solutions for frontend, 
+            backend, and full stack development needs.
+          </motion.p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.div
               key={i}
@@ -55,30 +137,45 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group relative h-full"
+              whileHover={{ y: -10 }}
+              onClick={() => openModal(service)}
+              className="group cursor-pointer will-change-transform"
             >
-              <div className="glass p-8 sm:p-10 rounded-[32px] sm:rounded-[40px] h-full border border-white/5 transition-all duration-700 hover:border-white/10 flex flex-col">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[20px] sm:rounded-3xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white mb-8 shadow-2xl shadow-cyan-500/20 group-hover:scale-110 transition-transform duration-500 shrink-0">
-                  <service.icon size={32} className="sm:hidden" />
-                  <service.icon size={40} className="hidden sm:block" />
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 tracking-tight">{service.title}</h3>
-                <p className="text-gray-400 text-base md:text-lg leading-7 mb-8 flex-grow font-medium">{service.desc}</p>
+              <div className="glass p-8 sm:p-10 rounded-[40px] h-full border border-white/5 transition-all duration-500 group-hover:border-white/20 group-hover:shadow-2xl flex flex-col relative overflow-hidden">
+                {/* Glass Reflection Effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 
-                <ul className="space-y-3 pt-6 border-t border-white/5 mt-auto">
-                  {service.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3 text-gray-500 font-bold tracking-tight text-sm sm:text-base">
-                      <HiOutlineCheckCircle size={20} className="text-cyan-500 shrink-0" /> 
-                      <span>{feature}</span>
+                {/* Service Icon */}
+                <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-8 shadow-2xl ${service.shadow} group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shrink-0`}>
+                  <service.icon size={36} />
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 tracking-tight group-hover:text-cyan-400 transition-colors">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-400 text-base leading-relaxed mb-8 flex-grow font-medium line-clamp-3">
+                  {service.desc}
+                </p>
+                
+                <ul className="space-y-3 mb-8">
+                  {service.points.map((point, j) => (
+                    <li key={j} className="flex items-center gap-3 text-gray-500 font-bold tracking-tight text-sm">
+                      <HiOutlineCheckCircle size={18} className="text-cyan-500 shrink-0" /> 
+                      <span>{point}</span>
                     </li>
                   ))}
                 </ul>
+
+                <div className="flex items-center gap-2 text-cyan-400 font-black text-sm uppercase tracking-widest pt-4 border-t border-white/5 group-hover:gap-4 transition-all">
+                  Learn More <HiArrowRight size={18} />
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Why Work With Me */}
+        {/* Why Work With Me Section */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +237,13 @@ export default function Services() {
           <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-r from-cyan-500/5 to-transparent pointer-events-none" />
         </motion.div>
       </Container>
+
+      {/* Service Modal */}
+      <ServiceModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        service={selectedService} 
+      />
     </section>
   );
 }
-

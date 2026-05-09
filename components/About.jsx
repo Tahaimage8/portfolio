@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import { HiOutlineBookOpen, HiOutlineLightningBolt, HiOutlineAcademicCap } from "react-icons/hi";
 import { FaBullseye } from "react-icons/fa";
 import Container from "./Container";
 
-const aboutCards = [
-  {
-    icon: HiOutlineLightningBolt,
-    title: "3+ Projects",
-    description: "Built real-world applications including Artiva AI.",
-    color: "text-cyan-400"
-  },
-  {
-    icon: HiOutlineAcademicCap,
-    title: "MERN Stack",
-    description: "Expertise in React, Next.js, Node.js, and MongoDB.",
-    color: "text-purple-400"
-  },
-  {
-    icon: FaBullseye,
-    title: "Remote Ready",
-    description: "Prepared for freelance and startup environments.",
-    color: "text-blue-400"
-  }
-];
-
 export default function About() {
+  const aboutCards = useMemo(() => [
+    {
+      icon: HiOutlineLightningBolt,
+      title: "3+ Projects",
+      description: "Built real-world applications including Artiva AI.",
+      color: "text-cyan-400"
+    },
+    {
+      icon: HiOutlineAcademicCap,
+      title: "MERN Stack",
+      description: "Expertise in React, Next.js, Node.js, and MongoDB.",
+      color: "text-purple-400"
+    },
+    {
+      icon: FaBullseye,
+      title: "Remote Ready",
+      description: "Prepared for freelance and startup environments.",
+      color: "text-blue-400"
+    }
+  ], []);
   return (
     <section id="about" className="relative overflow-hidden py-20 md:py-28">
       <Container>
@@ -153,7 +153,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex flex-col items-center text-center gap-4 p-6 glass-card rounded-[24px] hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.15)] hover:border-white/10 transition-all duration-300 group"
+                  className="flex flex-col items-center text-center gap-4 p-6 glass-card rounded-[24px] hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.15)] hover:border-white/10 transition-all duration-300 group will-change-transform"
                 >
                   <div className={`p-4 rounded-2xl glass border-white/5 transition-colors group-hover:bg-white/10 ${card.color}`}>
                     <card.icon size={28} />

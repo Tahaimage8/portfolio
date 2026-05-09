@@ -1,13 +1,14 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { HiArrowRight, HiOutlineCode, HiOutlineDeviceMobile } from "react-icons/hi";
-import { FiLayout } from "react-icons/fi";
+import { FiLayout, FiDownload } from "react-icons/fi";
 import Image from "next/image";
 import { useState } from "react";
 import Container from "./Container";
 
-export default function Hero() {
+const Hero = memo(() => {
   const [imageError, setImageError] = useState(false);
 
   return (
@@ -16,12 +17,12 @@ export default function Hero() {
       <motion.div 
         animate={{ y: [0, -40, 0], scale: [1, 1.1, 1] }} 
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" 
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none will-change-transform" 
       />
       <motion.div 
         animate={{ y: [0, 40, 0], scale: [1, 1.2, 1] }} 
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none" 
+        className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none will-change-transform" 
       />
 
       <Container className="relative z-10 w-full">
@@ -38,12 +39,12 @@ export default function Hero() {
                 transition: { staggerChildren: 0.15, delayChildren: 0.1 }
               }
             }}
-            className="text-center lg:text-left order-1"
+            className="text-center lg:text-left order-1 will-change-[opacity,transform]"
           >
             <motion.div
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 mb-8 will-change-[opacity,transform]"
             >
               <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
               <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-300">
@@ -54,7 +55,7 @@ export default function Hero() {
             <motion.h1 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-8"
+              className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-8 will-change-[opacity,transform]"
             >
               Building Modern <br />
               <span className="text-gradient">Web Experiences</span> <br />
@@ -64,7 +65,7 @@ export default function Hero() {
             <motion.p 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium"
+              className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium will-change-[opacity,transform]"
             >
               I’m Ibtesam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Developer (MERN)</span>. 
               I craft responsive and modern web applications with a focus on clean UI and performance.
@@ -73,13 +74,13 @@ export default function Hero() {
             <motion.div 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-wrap justify-center lg:justify-start gap-5 mb-16"
+              className="flex flex-wrap justify-center lg:justify-start gap-5 mb-16 will-change-[opacity,transform]"
             >
               <motion.a
                 href="#projects"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 bg-white text-dark font-black rounded-2xl flex items-center gap-3 transition-transform btn-shine shadow-2xl shadow-white/5"
+                className="px-10 py-5 bg-white text-dark font-black rounded-2xl flex items-center gap-3 transition-transform btn-shine shadow-2xl shadow-white/5 will-change-transform"
               >
                 View Projects <HiArrowRight size={20} />
               </motion.a>
@@ -87,9 +88,19 @@ export default function Hero() {
                 href="#contact"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 glass border-white/10 text-white font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-white/5"
+                className="px-10 py-5 glass border-white/10 text-white font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-white/5 will-change-transform"
               >
                 Contact Me
+              </motion.a>
+              <motion.a
+                href="https://drive.google.com/file/d/1TSFQNjWg_X5xX8HTtjBmC8r7QuGo_9qA/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-10 py-5 glass border-white/10 text-cyan-400 font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-cyan-500/10 group will-change-transform"
+              >
+                Download CV <FiDownload size={20} className="group-hover:translate-y-1 transition-transform" />
               </motion.a>
             </motion.div>
             
@@ -97,7 +108,7 @@ export default function Hero() {
             <motion.div 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0 pt-12 border-t border-white/5"
+              className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0 pt-12 border-t border-white/5 will-change-[opacity,transform]"
             >
               {[
                 { val: "10+", label: "Projects" },
@@ -117,7 +128,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex justify-center items-center order-2"
+            className="relative flex justify-center items-center order-2 will-change-transform"
           >
             {/* Background Glows */}
             <div className="absolute w-[80%] h-[80%] bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 rounded-full blur-[100px] animate-pulse" />
@@ -126,14 +137,14 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-10 -right-5 p-5 glass rounded-3xl text-cyan-400 z-20 hidden md:block"
+              className="absolute -top-10 -right-5 p-5 glass rounded-3xl text-cyan-400 z-20 hidden md:block will-change-transform"
             >
               <HiOutlineCode size={40} />
             </motion.div>
             <motion.div
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-10 -left-5 p-5 glass rounded-3xl text-purple-400 z-20 hidden md:block"
+              className="absolute -bottom-10 -left-5 p-5 glass rounded-3xl text-purple-400 z-20 hidden md:block will-change-transform"
             >
               <FiLayout size={40} />
             </motion.div>
@@ -172,12 +183,15 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-4"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-4 will-change-opacity"
       >
         <span className="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll to explore</span>
         <div className="w-[1px] h-20 bg-gradient-to-b from-cyan-500 via-purple-500 to-transparent" />
       </motion.div>
     </section>
   );
-}
+});
+
+Hero.displayName = "Hero";
+export default Hero;
 
