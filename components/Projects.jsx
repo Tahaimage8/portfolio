@@ -9,6 +9,14 @@ import Container from "./Container";
 
 export default function Projects() {
   const projects = useMemo(() => [
+        {
+      title: "SportNest",
+      description: "SportNest is a full-stack sports facility booking platform where users can explore venues, filter facilities, book available time slots, manage bookings, and facility owners can add or manage their own venues.",
+      tech: ["Full Stack", "Next.js", "MongoDB", "Booking System"],
+      github: "https://github.com/Tahaimage8/sportnest-client",
+      live: "https://sportnest-client-psi.vercel.app/",
+      image: "/projects/sportnest.png"
+    },
     {
       title: "SkillSphere",
       description: "A comprehensive Online Learning Management System with course categorization, enrollment tracking, and a modern student dashboard.",
@@ -41,14 +49,7 @@ export default function Projects() {
       live: "https://bookvibe1111.netlify.app/",
       image: "/projects/bookvibe.png"
     },
-    {
-      title: "DigiTools",
-      description: "A modern e-commerce marketplace for digital assets with optimized product filtering and cart functionality.",
-      tech: ["React", "Tailwind", "State Management"],
-      github: "https://github.com/tahaimage8/assienment-6",
-      live: "https://digitoolsll.netlify.app/",
-      image: "/projects/digitools.png"
-    }
+
   ], []);
   return (
     <section id="projects" className="relative overflow-hidden py-20 md:py-28">

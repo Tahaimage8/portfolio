@@ -41,7 +41,7 @@ const Contact = memo(() => {
             <div className="space-y-6 sm:space-y-8">
               {[
                 { icon: HiOutlineMail, label: "Email", val: "tahaimage8@gmail.com", color: "text-cyan-400" },
-                { icon: HiOutlinePhone, label: "Phone", val: "01406718710", color: "text-purple-400" },
+                { icon: HiOutlinePhone, label: "Phone", val: "014********", color: "text-purple-400" },
                 { icon: HiOutlineLocationMarker, label: "Location", val: "Dhaka, Bangladesh", color: "text-blue-400" }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 group">

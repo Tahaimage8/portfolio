@@ -11,7 +11,7 @@ export default function About() {
     {
       icon: HiOutlineLightningBolt,
       title: "3+ Projects",
-      description: "Built real-world applications including Artiva AI.",
+      description: "Built real-world applications including SportNest.",
       color: "text-cyan-400"
     },
     {
@@ -136,7 +136,7 @@ export default function About() {
                 As a self-taught developer, I continuously improve my skills by building real-world projects using React, Next.js, Node.js, Express.js, and MongoDB. I also leverage modern AI tools to enhance my development workflow, improve productivity, and build smarter user experiences.
               </motion.p>
               <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
-                I have built 3+ projects, including <span className="text-cyan-400 font-bold">Artiva</span> — an AI-powered image application. My strengths include clean UI design, problem-solving, and the ability to learn and adapt quickly.
+                I have built multiple real-world projects, including <span className="text-cyan-400 font-bold">SportNest</span> — a full-stack sports facility booking system with authentication, facility search and filtering, booking management, owner-based facility control, protected routes, and a responsive light/dark mode interface. My strengths include clean UI design, problem-solving, and the ability to learn and adapt quickly.
               </motion.p>
               <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
                 I am a focused and disciplined learner, aiming to become a production-level developer. My goal is to work on real-world products, collaborate with teams, and grow through remote opportunities, freelancing, and startup environments.
