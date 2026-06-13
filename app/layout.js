@@ -3,14 +3,80 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Cursor from "@/components/Cursor";
 
 export const metadata = {
-  title: "Ibtesam Taha | Premium Portfolio",
+  metadataBase: new URL("https://portfolio-ibtesam-taha.vercel.app"),
+  title: "Ibtesam Taha | MERN & Full Stack Developer from Bangladesh",
   description:
-    "Modern, animated personal portfolio of Ibtesam Taha, a Frontend Web Developer & MERN Stack Learner.",
+    "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh. View my projects, skills, and contact me.",
+  keywords: [
+    "Ibtesam",
+    "Taha",
+    "Ibtesam Taha",
+    "Taha developer",
+    "Ibtesam portfolio",
+    "MERN Developer",
+    "Full Stack Developer",
+    "Bangladesh Developer",
+    "React Developer",
+    "Next.js Developer"
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "Ibtesam Taha", url: "https://portfolio-ibtesam-taha.vercel.app" }],
+  creator: "Ibtesam Taha",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://portfolio-ibtesam-taha.vercel.app",
+    title: "Ibtesam Taha | Full Stack & MERN Developer",
+    description:
+      "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh.",
+    siteName: "Ibtesam Taha Portfolio",
+    images: [
+      {
+        url: "/images/profile.jpg", // Please make sure an og-image.jpg exists in the public folder
+        width: 1200,
+        height: 630,
+        alt: "Ibtesam Taha Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ibtesam Taha | Full Stack & MERN Developer",
+    description:
+      "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh.",
+  },
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ibtesam Taha",
+  alternateName: ["Taha", "Ibtesam", "Taha Developer"],
+  url: "https://portfolio-ibtesam-taha.vercel.app",
+  jobTitle: "Full Stack Developer & MERN Developer",
+  description: "MERN Developer and Full Stack Developer from Bangladesh.",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "Bangladesh",
+  },
+  sameAs: [
+    "https://github.com/Tahaimage8",
+    "https://www.facebook.com/ibtesamtaha1/",
+    "https://www.instagram.com/ibtesamtaha1",
+  ],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+      </head>
       <body className="w-full overflow-x-hidden antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
         <SmoothScroll>
           <Cursor />
