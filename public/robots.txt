@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-ibtesam-taha.vercel.app/sitemap.xml
