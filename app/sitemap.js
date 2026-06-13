@@ -1,28 +1,22 @@
 export default function sitemap() {
+  const baseUrl = "https://portfolio-ibtesam-taha.vercel.app";
+
   return [
     {
-      url: 'https://portfolio-ibtesam-taha.vercel.app',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
+      url: `${baseUrl}/`,
+      lastModified: new Date().toISOString(),
     },
     {
-      url: 'https://portfolio-ibtesam-taha.vercel.app/projects',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      url: `${baseUrl}/projects`,
+      lastModified: new Date().toISOString(),
     },
     {
-      url: 'https://portfolio-ibtesam-taha.vercel.app/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      url: `${baseUrl}/about`,
+      lastModified: new Date().toISOString(),
     },
     {
-      url: 'https://portfolio-ibtesam-taha.vercel.app/contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      url: `${baseUrl}/contact`,
+      lastModified: new Date().toISOString(),
     },
   ];
 }
