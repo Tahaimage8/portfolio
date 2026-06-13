@@ -22,8 +22,16 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
-  authors: [{ name: "Ibtesam Taha", url: "https://portfolio-ibtesam-taha.vercel.app" }],
+  authors: [
+    { name: "Ibtesam Taha", url: "https://portfolio-ibtesam-taha.vercel.app" }
+  ],
   creator: "Ibtesam Taha",
+
+  // 🔥 GOOGLE VERIFICATION ADDED HERE
+  verification: {
+    google: "Uu0xY9pNNCu16yRJRmUN9kc3PNR2zcXdiEBbIywuU0Y"
+  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -34,18 +42,20 @@ export const metadata = {
     siteName: "Ibtesam Taha Portfolio",
     images: [
       {
-        url: "/images/profile.jpg", // Please make sure an og-image.jpg exists in the public folder
+        url: "/images/profile.jpg",
         width: 1200,
         height: 630,
         alt: "Ibtesam Taha Portfolio",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Ibtesam Taha | Full Stack & MERN Developer",
     description:
       "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh.",
+    images: ["/images/profile.jpg"],
   },
 };
 
@@ -74,15 +84,17 @@ export default function RootLayout({ children }) {
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
         />
       </head>
+
       <body className="w-full overflow-x-hidden antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
         <SmoothScroll>
           <Cursor />
 
           <div className="relative min-h-screen w-full overflow-hidden">
-            {/* Global Gradient Backgrounds */}
             <div className="glow-aura pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl animate-glow" />
             <div
               className="glow-aura pointer-events-none absolute top-1/2 -right-20 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl animate-glow"
