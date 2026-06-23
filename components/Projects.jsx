@@ -9,7 +9,15 @@ import Container from "./Container";
 
 export default function Projects() {
   const projects = useMemo(() => [
-        {
+    {
+      title: "RaktaNex",
+      description: "Raktanex is a full-stack blood donation platform connecting donors, volunteers, and administrators to streamline blood request fulfillment and fundraising.",
+      tech: ["Full Stack", "Stripe", "MongoDB", "Next.js", "Better-Auth"],
+      github: "https://github.com/Tahaimage8/raktanex-client",
+      live: "https://raktanex-client.vercel.app/",
+      image: "/projects/raktanex.png"
+    },
+    {
       title: "SportNest",
       description: "SportNest is a full-stack sports facility booking platform where users can explore venues, filter facilities, book available time slots, manage bookings, and facility owners can add or manage their own venues.",
       tech: ["Full Stack", "Next.js", "MongoDB", "Booking System"],
@@ -32,22 +40,6 @@ export default function Projects() {
       github: "https://github.com/tahaimage8/artiva-art-gallery",
       live: "https://artiva-ai.vercel.app/",
       image: "/projects/artiva.png"
-    },
-    {
-      title: "KeenKeeper",
-      description: "A professional productivity suite for task management, note-taking, and efficient organization with a focus on UX.",
-      tech: ["React", "Tailwind", "Lucide", "Context API"],
-      github: "https://github.com/tahaimage8/keen-keeper",
-      live: "https://assienment-7-77.vercel.app/",
-      image: "/projects/keenkeeper.png"
-    },
-    {
-      title: "BookVibe",
-      description: "A social platform for book enthusiasts to discover, review, and organize their personal reading lists.",
-      tech: ["React", "Router", "Tailwind", "Local Storage"],
-      github: "https://github.com/tahaimage8/book-vibe",
-      live: "https://bookvibe1111.netlify.app/",
-      image: "/projects/bookvibe.png"
     },
 
   ], []);
