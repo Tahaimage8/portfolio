@@ -28,9 +28,9 @@ export default function Projects() {
     {
       title: "SkillSphere",
       description: "A comprehensive Online Learning Management System with course categorization, enrollment tracking, and a modern student dashboard.",
-      tech: ["React", "Firebase", "Tailwind", "DaisyUI"],
+      tech: ["React", "Better-Auth", "Tailwind", "DaisyUI"],
       github: "https://github.com/tahaimage8/skill-sphere",
-      live: "https://tskillsphere-ibtesam.vercel.app/",
+      live: "https://skillsphere-ibtesam.vercel.app/",
       image: "/projects/skillsphere.png"
     },
     {
