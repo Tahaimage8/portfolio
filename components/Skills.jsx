@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { useMemo } from "react";
 import { 
   SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss,
-  SiNodedotjs, SiExpress, SiMongodb, SiFirebase, SiFramer, SiGreensock,
+  SiNodedotjs, SiExpress, SiMongodb, SiFramer, SiGreensock,
   SiVite, SiVercel, SiGit, SiGithub, SiFigma
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
+import { HiShieldCheck } from "react-icons/hi";
 import Container from "./Container";
 
 export default function Skills() {
@@ -41,7 +42,7 @@ export default function Skills() {
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
         { name: "Express", icon: SiExpress, color: "#ffffff" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+        { name: "Better Auth", icon: HiShieldCheck, color: "#00C4B6" },
       ]
     },
     {

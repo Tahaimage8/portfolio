@@ -3,9 +3,10 @@
 import { memo } from "react";
 import { 
   SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss,
-  SiNodedotjs, SiExpress, SiMongodb, SiFirebase, SiFramer, SiGreensock,
+  SiNodedotjs, SiExpress, SiMongodb, SiFramer, SiGreensock,
   SiGit, SiGithub, SiVercel, SiFigma
 } from "react-icons/si";
+import { HiShieldCheck } from "react-icons/hi";
 
 const techIcons = [
   { name: "React", icon: SiReact },
@@ -17,9 +18,9 @@ const techIcons = [
   { name: "Node.js", icon: SiNodedotjs },
   { name: "Express", icon: SiExpress },
   { name: "MongoDB", icon: SiMongodb },
-  { name: "Firebase", icon: SiFirebase },
   { name: "Git", icon: SiGit },
   { name: "Vercel", icon: SiVercel },
+  { name: "Better Auth", icon: HiShieldCheck },
 ];
 
 const TechMarquee = memo(() => {
