@@ -9,6 +9,35 @@ import Container from "./Container";
 
 export default function Projects() {
   const projects = useMemo(() => [
+     {
+      title: "DineSport",
+      description: "A modern and responsive full-stack web application built with a strong focus on clean design, smooth user experience, scalable architecture, and practical real-world functionality.",
+      tech: [
+        "Full Stack",
+        "Next.js",
+        "TypeScript",
+        "MongoDB",
+        "Better Auth",
+      ],
+      github: "https://github.com/Tahaimage8/DineSpot-client",
+      live: "https://dine-spot-client-chi.vercel.app",
+      image: "/projects/dinesport.png"
+    },
+    {
+      title: "Rolebix",
+      description: "A modern full-stack, role-based career marketplace where job seekers can discover and track opportunities, recruiters can manage companies, jobs, and applicants, and administrators can moderate listings and monitor payments.",
+      tech: [
+        "Full Stack",
+        "Next.js",
+        "MongoDB",
+        "Better Auth",
+        "Stripe"
+      ],
+      github: "https://github.com/Tahaimage8/Rolebix-client-side",
+      live: "https://rolebix-client-side.vercel.app/",
+      image: "/projects/rolebix.png"
+    },
+
     {
       title: "RaktaNex",
       description: "Raktanex is a full-stack blood donation platform connecting donors, volunteers, and administrators to streamline blood request fulfillment and fundraising.",
