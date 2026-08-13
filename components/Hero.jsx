@@ -67,7 +67,7 @@ const Hero = memo(() => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium will-change-[opacity,transform]"
             >
-              I’m Ibtesam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Developer (MERN)</span>. 
+              I’m Ibtesam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Developer</span>. 
               I craft responsive and modern web applications with a focus on clean UI and performance.
             </motion.p>
             

@@ -1,17 +1,17 @@
-# Ibtesam Mubbasir Taha — Portfolio
+# Ibtasam Mubbasir Taha — Portfolio
 
-A modern, responsive, and animated personal portfolio website built with Next.js, React, and Tailwind CSS.  
-This portfolio showcases my skills, projects, development journey, and contact information as a Full Stack Developer (MERN).
+A modern, responsive, and animated personal portfolio website built with Next.js, React, TypeScript, and Tailwind CSS.  
+This portfolio showcases my skills, projects, development journey, and contact information as a Full Stack Developer.
 
 ## 🚀 Live Demo
 
-[Live LInk](https://portfolio-ibtesam-taha.vercel.app/)
+[Live Link](https://portfolio-ibtesam-taha.vercel.app/)
 
 ## 👨‍💻 About Me
 
-I am a passionate Full Stack Developer (MERN) focused on building clean, responsive, and user-friendly web applications.
+I am a passionate Full Stack Developer focused on building clean, responsive, fast, and scalable web applications across frontend, backend, databases, and deployment.
 
-As a self-taught developer, I continuously improve my skills by building real-world projects using React, Next.js, Node.js, Express.js, and MongoDB. I also leverage modern AI tools to improve my development workflow, productivity, and user experience.
+By building real-world projects such as DineSpot, I continuously sharpen my experience using React, Next.js, TypeScript, Node.js, Express.js, MongoDB, and PostgreSQL. I also leverage modern AI tools to improve development workflow, productivity, and application quality.
 
 ## ✨ Features
 
@@ -21,14 +21,15 @@ As a self-taught developer, I continuously improve my skills by building real-wo
 - Animated sections
 - Interactive cursor effects
 - Glassmorphism style
-- Project showcase
+- Project showcase with case studies
 - Skills and timeline sections
-- Contact section
+- Interactive contact section with API verification
 
 ## 🛠️ Tech Stack
 
 - Next.js
 - React.js
+- TypeScript
 - Tailwind CSS
 - Framer Motion
 - GSAP
@@ -49,8 +50,7 @@ As a self-taught developer, I continuously improve my skills by building real-wo
 
 ## 🏆 Highlight
 
-- Built 3+ projects
-- MERN Stack focused
+- Built multiple production-grade web applications including DineSpot
+- Full Stack capabilities across Frontend, Backend, Database & Cloud Deployment
 - AI-assisted development workflow
 - Freelance and remote work ready
-

@@ -1,10 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from "framer-motion";
-import { useRef, useMemo, useState } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import Container from "./Container";
 import { 
-  HiOutlineRocketLaunch, 
   HiOutlineChevronDown, 
   HiOutlineChevronUp, 
   HiOutlineSparkles,
@@ -79,7 +78,7 @@ export default function Timeline() {
       bgYear: "2027",
       title: "Software Development",
       phase: "SOFTWARE",
-      status: "PLANNED • 2027",
+      status: "PLANNED",
       statusType: "planned",
       chips: ["C", "C++", "DSA", "Algorithms", "Python", "OOP", "SQL", "Software Development"],
       desc: "Planning to strengthen my programming and problem-solving foundation, then apply it through Python, object-oriented programming, databases and real-world software development.",
@@ -115,7 +114,7 @@ export default function Timeline() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 70%", "end 80%"]
+    offset: ["start 65%", "end 75%"]
   });
 
   const scaleY = useSpring(scrollYProgress, {
@@ -126,11 +125,27 @@ export default function Timeline() {
 
   const indicatorY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+  // Dynamic Phase Tracker based on scroll progress
+  const activePhaseIndex = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.5, 0.75, 1],
+    [0, 1, 2, 3, 4]
+  );
+
+  const [currentPhase, setCurrentPhase] = useState("FULL STACK");
+
+  useEffect(() => {
+    return activePhaseIndex.on("change", (latest) => {
+      const idx = Math.min(Math.max(Math.round(latest), 0), phases.length - 1);
+      setCurrentPhase(phases[idx]);
+    });
+  }, [activePhaseIndex, phases]);
+
   return (
     <section id="journey" ref={containerRef} className="relative overflow-hidden py-20 md:py-28">
       {/* Background Decorative Blur Orbs */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-cyan-500/5 blur-[160px] pointer-events-none -z-10 animate-pulse" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/5 blur-[160px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-cyan-500/5 blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/5 blur-[160px] pointer-events-none -z-10" />
 
       <Container>
         {/* Header */}
@@ -163,7 +178,7 @@ export default function Timeline() {
             From learning the foundations of the web to building full-stack applications — with software development and AI as the next chapters.
           </motion.p>
 
-          {/* Phase Indicator Bar */}
+          {/* Dynamic Phase Indicator Bar */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -171,22 +186,23 @@ export default function Timeline() {
             transition={{ delay: 0.2 }}
             className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 rounded-2xl sm:rounded-full glass border border-white/5 max-w-3xl mx-auto"
           >
-            {phases.map((ph, idx) => (
-              <div key={ph} className="flex items-center gap-2 sm:gap-3">
-                <span className={`px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider transition-colors ${
-                  ph === "FULL STACK" 
-                    ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/30" 
-                    : ph === "SOFTWARE" || ph === "AI"
-                    ? "text-purple-300/70 bg-purple-500/5"
-                    : "text-gray-400 bg-white/5"
-                }`}>
-                  {ph}
-                </span>
-                {idx < phases.length - 1 && (
-                  <span className="text-gray-600 font-bold text-xs">→</span>
-                )}
-              </div>
-            ))}
+            {phases.map((ph, idx) => {
+              const isActive = currentPhase === ph;
+              return (
+                <div key={ph} className="flex items-center gap-2 sm:gap-3">
+                  <span className={`px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${
+                    isActive 
+                      ? "bg-cyan-400 text-black shadow-[0_0_15px_rgba(6,182,212,0.6)] scale-105" 
+                      : "text-gray-400 bg-white/5 hover:text-white"
+                  }`}>
+                    {ph}
+                  </span>
+                  {idx < phases.length - 1 && (
+                    <span className="text-gray-600 font-bold text-xs">→</span>
+                  )}
+                </div>
+              );
+            })}
           </motion.div>
         </div>
 
@@ -201,17 +217,15 @@ export default function Timeline() {
             className="absolute left-6 md:left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-cyan-500 via-purple-500 to-cyan-400 -translate-x-1/2 origin-top shadow-[0_0_15px_rgba(6,182,212,0.6)]"
           />
 
-          {/* Traveling Energy Core */}
+          {/* Pure Glowing Energy Core Orb (Replacing Rocket Icon) */}
           {!shouldReduceMotion && (
             <motion.div
               style={{ top: indicatorY }}
-              className="absolute left-6 md:left-1/2 w-8 h-8 -translate-x-1/2 z-30 flex items-center justify-center pointer-events-none will-change-[top]"
+              className="absolute left-6 md:left-1/2 w-6 h-6 -translate-x-1/2 z-30 flex items-center justify-center pointer-events-none will-change-[top]"
             >
               <div className="relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-cyan-400/50 blur-xl rounded-full scale-150 animate-pulse" />
-                <div className="w-5 h-5 rounded-full bg-white shadow-[0_0_20px_rgba(6,182,212,1)] flex items-center justify-center">
-                  <HiOutlineRocketLaunch className="text-cyan-600 text-[10px] rotate-180" />
-                </div>
+                <div className="absolute w-8 h-8 bg-cyan-400/60 blur-lg rounded-full animate-pulse" />
+                <div className="w-4 h-4 rounded-full bg-cyan-400 border-2 border-white shadow-[0_0_20px_rgba(6,182,212,1)]" />
               </div>
             </motion.div>
           )}
@@ -253,19 +267,20 @@ export default function Timeline() {
                     )}
                   </div>
 
-                  {/* Main Content Card */}
+                  {/* Main Content Card with Active Focus */}
                   <motion.div 
                     initial={{ opacity: 0, x: isEven ? 40 : -40, y: 20 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-60px" }}
+                    whileHover={{ scale: 1.015 }}
                     className={`w-full md:w-1/2 ${
                       isEven ? "md:pl-16 pl-14" : "md:pr-16 pl-14 md:text-right"
                     }`}
                   >
                     <div className={`p-6 sm:p-8 rounded-[32px] transition-all duration-500 relative overflow-hidden group ${
                       event.statusType === "current"
-                        ? "glass border border-cyan-500/40 bg-cyan-950/20 shadow-[0_10px_35px_-10px_rgba(6,182,212,0.25)]"
+                        ? "glass border border-cyan-500/50 bg-cyan-950/20 shadow-[0_10px_35px_-10px_rgba(6,182,212,0.25)]"
                         : event.statusType === "future"
                         ? "glass border border-purple-500/30 bg-gradient-to-br from-purple-950/20 via-dark/90 to-cyan-950/20 shadow-[0_10px_35px_-10px_rgba(168,85,247,0.2)]"
                         : event.statusType === "planned"
@@ -273,9 +288,9 @@ export default function Timeline() {
                         : "glass border border-white/5 hover:border-white/20 shadow-xl"
                     }`}>
 
-                      {/* Futuristic Neural Network Grid Background for Future AI Card */}
+                      {/* Subtle Neural Network Dot & Line Pattern for Future AI Card */}
                       {event.statusType === "future" && (
-                        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#a855f7_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+                        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#a855f7_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
                       )}
 
                       {/* Status Badge & Year Row */}
@@ -324,7 +339,7 @@ export default function Timeline() {
                             key={chip}
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.2 + chipIdx * 0.04 }}
+                            transition={{ delay: 0.15 + chipIdx * 0.03 }}
                             viewport={{ once: true }}
                             whileHover={{ y: -2, scale: 1.05 }}
                             className={`px-3 py-1 rounded-xl text-xs font-bold transition-all duration-300 border ${
@@ -340,11 +355,12 @@ export default function Timeline() {
                         ))}
                       </div>
 
-                      {/* Interactive Expandable Detailed Roadmap for Planned/Future cards */}
+                      {/* Interactive Expandable Detailed Roadmap */}
                       {event.roadmap && (
                         <div className="mt-4 pt-4 border-t border-white/5 relative z-10">
                           <button
                             onClick={() => toggleExpand(i)}
+                            aria-expanded={isExpanded}
                             className={`inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider py-2 px-4 rounded-xl transition-all ${
                               isExpanded 
                                 ? "bg-purple-500/20 text-purple-300 border border-purple-500/40" 

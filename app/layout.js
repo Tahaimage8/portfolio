@@ -4,20 +4,22 @@ import Cursor from "@/components/Cursor";
 
 export const metadata = {
   metadataBase: new URL("https://portfolio-ibtesam-taha.vercel.app"),
-  title: "Ibtesam Taha | MERN & Full Stack Developer from Bangladesh",
+  title: "Ibtesam Taha | Full Stack Developer",
   description:
-    "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh. View my projects, skills, and contact me.",
+    "Full Stack Developer building modern web applications with Next.js, TypeScript, Node.js, and scalable backend technologies.",
   keywords: [
     "Ibtesam",
     "Taha",
     "Ibtesam Taha",
     "Taha developer",
     "Ibtesam portfolio",
-    "MERN Developer",
     "Full Stack Developer",
-    "Bangladesh Developer",
+    "Frontend Developer",
+    "Backend Developer",
     "React Developer",
-    "Next.js Developer"
+    "Next.js Developer",
+    "TypeScript Developer",
+    "Bangladesh Developer"
   ],
   alternates: {
     canonical: "/",
@@ -27,7 +29,6 @@ export const metadata = {
   ],
   creator: "Ibtesam Taha",
 
-  // 🔥 GOOGLE VERIFICATION ADDED HERE
   verification: {
     google: "Uu0xY9pNNCu16yRJRmUN9kc3PNR2zcXdiEBbIywuU0Y"
   },
@@ -36,25 +37,25 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://portfolio-ibtesam-taha.vercel.app",
-    title: "Ibtesam Taha | Full Stack & MERN Developer",
+    title: "Ibtesam Taha | Full Stack Developer",
     description:
-      "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh.",
+      "Full Stack Developer building modern web applications with Next.js, TypeScript, Node.js, and scalable backend technologies.",
     siteName: "Ibtesam Taha Portfolio",
     images: [
       {
         url: "/images/profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Ibtesam Taha Portfolio",
+        alt: "Ibtesam Taha | Full Stack Developer Portfolio",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Ibtesam Taha | Full Stack & MERN Developer",
+    title: "Ibtesam Taha | Full Stack Developer",
     description:
-      "Portfolio of Ibtesam Taha (Taha Developer), a MERN Developer & Full Stack Developer from Bangladesh.",
+      "Full Stack Developer building modern web applications with Next.js, TypeScript, Node.js, and scalable backend technologies.",
     images: ["/images/profile.jpg"],
   },
 };
@@ -65,8 +66,8 @@ const personSchema = {
   name: "Ibtesam Taha",
   alternateName: ["Taha", "Ibtesam", "Taha Developer"],
   url: "https://portfolio-ibtesam-taha.vercel.app",
-  jobTitle: "Full Stack Developer & MERN Developer",
-  description: "MERN Developer and Full Stack Developer from Bangladesh.",
+  jobTitle: "Full Stack Developer",
+  description: "Full Stack Developer building modern web applications across frontend, backend, databases, and deployment.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "Bangladesh",

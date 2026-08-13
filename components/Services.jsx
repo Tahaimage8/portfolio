@@ -194,7 +194,7 @@ export default function Services() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-8 leading-tight tracking-tight">Why <span className="text-gradient">Work With Me?</span></h2>
               <div className="space-y-6 sm:space-y-8">
                 {[
-                  { title: "Rapid Adaptation", desc: "Successfully mastering the MERN stack with a results-oriented mindset." },
+                  { title: "Rapid Adaptation", desc: "Successfully mastering modern full-stack development with a results-oriented mindset." },
                   { title: "Precision Focus", desc: "Every pixel and every line of code is scrutinized for quality and performance." },
                   { title: "Client Centric", desc: "Translating business goals into functional, beautiful digital solutions." }
                 ].map((item, i) => (
