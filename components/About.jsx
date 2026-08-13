@@ -11,13 +11,13 @@ export default function About() {
     {
       icon: HiOutlineLightningBolt,
       title: "3+ Projects",
-      description: "Built real-world applications including RaktaNex.",
+      description: "Built real-world applications including DineSpot.",
       color: "text-cyan-400"
     },
     {
       icon: HiOutlineAcademicCap,
-      title: "MERN Stack",
-      description: "Expertise in React, Next.js, Node.js, and MongoDB.",
+      title: "Full Stack",
+      description: "Frontend, backend, database and deployment.",
       color: "text-purple-400"
     },
     {
@@ -54,9 +54,9 @@ export default function About() {
                 
                 <div className="space-y-8">
                   {[
-                    { label: "Frontend Architecture", val: "92%", color: "bg-cyan-500", shadow: "shadow-cyan-500/20" },
-                    { label: "MERN Stack Expertise", val: "85%", color: "bg-purple-500", shadow: "shadow-purple-500/20" },
-                    { label: "UI/UX & Animations", val: "88%", color: "bg-blue-500", shadow: "shadow-blue-500/20" }
+                    { label: "Full Stack Development", val: "92%", color: "bg-cyan-500", shadow: "shadow-cyan-500/20" },
+                    { label: "Backend & Database", val: "88%", color: "bg-purple-500", shadow: "shadow-purple-500/20" },
+                    { label: "UI, Motion & Deployment", val: "90%", color: "bg-blue-500", shadow: "shadow-blue-500/20" }
                   ].map((skill, i) => (
                     <div key={i} className="space-y-3">
                       <div className="flex justify-between items-end">
@@ -107,8 +107,8 @@ export default function About() {
               Who I Am
             </motion.div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 leading-tight tracking-tight">
-              Dedicated to <br className="hidden sm:block" />
-              <span className="text-gradient">Clean Development</span>
+              Building Complete <br className="hidden sm:block" />
+              <span className="text-gradient">Digital Experiences</span>
             </h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -116,7 +116,7 @@ export default function About() {
               viewport={{ once: true }}
               className="text-gray-400 text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 lg:text-left text-center"
             >
-              AI-Assisted Development • Modern Web Apps • MERN Stack
+              FULL STACK DEVELOPMENT • UI & MOTION • CLOUD & DEPLOYMENT
             </motion.p>
             
             <motion.div 
@@ -130,16 +130,16 @@ export default function About() {
               className="space-y-6 text-gray-400 text-base md:text-lg leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 mb-12 text-center lg:text-left"
             >
               <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
-                I am a passionate <span className="text-white font-bold">Full Stack Developer (MERN)</span> focused on building clean, responsive, and user-friendly web applications.
+                I am a passionate <span className="text-white font-bold">Full Stack Developer</span> building complete, modern web applications from frontend to backend. I combine clean architecture with thoughtful design to craft fast, scalable, and intuitive digital experiences.
               </motion.p>
               <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
-                As a self-taught developer, I continuously improve my skills by building real-world projects using React, Next.js, Node.js, Express.js, and MongoDB. I also leverage modern AI tools to enhance my development workflow, improve productivity, and build smarter user experiences.
+                On the frontend, I create responsive, polished user interfaces using <span className="text-white font-bold">React</span>, <span className="text-white font-bold">Next.js</span>, <span className="text-white font-bold">TypeScript</span>, and <span className="text-white font-bold">Tailwind CSS</span>. On the backend, I architect APIs and services with <span className="text-white font-bold">Node.js</span>, <span className="text-white font-bold">Express</span>, <span className="text-white font-bold">NestJS</span>, <span className="text-white font-bold">Python</span>, and <span className="text-white font-bold">FastAPI</span>, backed by <span className="text-white font-bold">MongoDB</span>, <span className="text-white font-bold">PostgreSQL</span>, and <span className="text-white font-bold">Prisma ORM</span>. I optimize my workflow using <span className="text-white font-bold">Git</span>, <span className="text-white font-bold">GitHub</span>, and modern AI tools to improve productivity and software quality.
               </motion.p>
               <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
-                I have built multiple real-world projects, including <span className="text-cyan-400 font-bold">RaktaNex</span> — a comprehensive full-stack blood donation platform connecting donors, volunteers, and administrators. It features secure JWT role-based access control, advanced donor search by blood group and location, Stripe fundraising integration, and real-time donation tracking using Next.js, Express.js, and MongoDB. My strengths include clean UI design, problem-solving, and the ability to learn and adapt quickly.
+                Projects like <span className="text-cyan-400 font-bold">DineSpot</span> reflect this end-to-end approach — combining a modern Next.js and TypeScript frontend with a dedicated Node.js, Express, and TypeScript REST API, MongoDB, authentication, and role-based workflows. I also focus on UI quality and motion with <span className="text-white font-bold">Framer Motion</span>, <span className="text-white font-bold">GSAP</span>, and <span className="text-white font-bold">Figma</span>, alongside deployment using <span className="text-white font-bold">Docker</span>, <span className="text-white font-bold">Nginx</span>, <span className="text-white font-bold">AWS</span>, <span className="text-white font-bold">Vercel</span>, and <span className="text-white font-bold">Netlify</span>.
               </motion.p>
               <motion.p variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
-                I am a focused and disciplined learner, aiming to become a production-level developer. My goal is to work on real-world products, collaborate with teams, and grow through remote opportunities, freelancing, and startup environments.
+                Continuous learning and real-world execution drive my work. My goal is to build impactful products, collaborate with engineering teams, and grow through remote opportunities, freelancing, and startup environments.
               </motion.p>
             </motion.div>
             
