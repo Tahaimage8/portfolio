@@ -77,7 +77,7 @@ export default function ServiceModal({ isOpen, onClose, service }) {
             </div>
 
             {/* Scrollable Content */}
-            <div className="flex-1 overflow-y-auto p-8 pt-4 custom-scrollbar">
+            <div className="flex-1 relative overflow-y-auto p-8 pt-4 custom-scrollbar">
               <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 font-medium">
                 {service.desc}
               </p>

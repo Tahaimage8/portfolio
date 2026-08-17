@@ -210,6 +210,7 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover object-top transition-transform duration-1000 group-hover:scale-105 w-full h-full"
                   />
                   {/* Premium Overlay */}
@@ -356,7 +357,7 @@ export default function Projects() {
               </div>
 
               {/* Modal Body */}
-              <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 custom-scrollbar">
+              <div className="flex-1 relative overflow-y-auto p-6 sm:p-8 space-y-8 custom-scrollbar">
                 {/* Overview */}
                 <div>
                   <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] mb-2 flex items-center gap-2">

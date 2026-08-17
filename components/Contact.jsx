@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker, HiCheckCircle, HiExclamationCircle } from "react-icons/hi";
 import { FiSend } from "react-icons/fi";
@@ -19,6 +19,22 @@ const Contact = memo(() => {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // "idle" | "submitting" | "success" | "error"
   const [responseMessage, setResponseMessage] = useState("");
+
+  useEffect(() => {
+    const handlePrefill = (e) => {
+      if (e.detail) {
+        setFormData((prev) => ({
+          ...prev,
+          name: e.detail.name || prev.name,
+          email: e.detail.email || prev.email,
+          subject: e.detail.subject || prev.subject,
+          message: e.detail.message || prev.message,
+        }));
+      }
+    };
+    window.addEventListener("prefill-contact", handlePrefill);
+    return () => window.removeEventListener("prefill-contact", handlePrefill);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

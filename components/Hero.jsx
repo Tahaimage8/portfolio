@@ -159,6 +159,7 @@ const Hero = memo(() => {
                       src="/images/profile.jpg"
                       alt="Ibtesam Taha"
                       fill
+                      sizes="(max-width: 768px) 300px, 420px"
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
                       onError={() => setImageError(true)}
                       priority

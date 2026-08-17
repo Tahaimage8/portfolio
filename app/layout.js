@@ -1,6 +1,7 @@
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Cursor from "@/components/Cursor";
+import TahaAIWidget from "@/components/ai/TahaAIWidget";
 
 export const metadata = {
   metadataBase: new URL("https://portfolio-ibtesam-taha.vercel.app"),
@@ -109,6 +110,7 @@ export default function RootLayout({ children }) {
             {children}
           </div>
         </SmoothScroll>
+        <TahaAIWidget />
       </body>
     </html>
   );
