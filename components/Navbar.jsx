@@ -98,7 +98,7 @@ export default function Navbar() {
                 );
               })}
             </ul>
-            
+             
             <div className="flex items-center gap-4 border-l border-white/10 pl-6">
               {socialLinks.map((social, i) => (
                 <motion.a
