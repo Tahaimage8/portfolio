@@ -93,7 +93,7 @@ const Hero = memo(() => {
                 Contact Me
               </motion.a>
               <motion.a
-                href="https://drive.google.com/file/d/1TSFQNjWg_X5xX8HTtjBmC8r7QuGo_9qA/view?usp=sharing"
+                href="https://drive.google.com/file/d/1rpHSwdCkjSCTFdDJhZ6WfVsppqkvfi-h/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}

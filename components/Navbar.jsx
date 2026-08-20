@@ -7,6 +7,8 @@ import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import Container from "./Container";
 
+import { PUBLIC_LINKS } from "@/lib/constants";
+
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -16,9 +18,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/tahaimage8", label: "GitHub" },
-  { icon: FaLinkedin, href: "https://www.linkedin.com/in/ibtesam-taha/", label: "LinkedIn" },
-  { icon: FaFacebook, href: "https://www.facebook.com/ibtesamtaha1", label: "Facebook" },
+  { icon: FaGithub, href: PUBLIC_LINKS.GITHUB, label: "GitHub" },
+  { icon: FaLinkedin, href: PUBLIC_LINKS.LINKEDIN, label: "LinkedIn" },
+  { icon: FaFacebook, href: PUBLIC_LINKS.FACEBOOK, label: "Facebook" },
 ];
 
 export default function Navbar() {
@@ -113,7 +115,7 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <motion.a
-                href="https://drive.google.com/file/d/1TSFQNjWg_X5xX8HTtjBmC8r7QuGo_9qA/view?usp=sharing"
+                href={PUBLIC_LINKS.RESUME}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -175,7 +177,7 @@ export default function Navbar() {
                 className="mt-10 flex flex-col items-center gap-6 w-full px-8"
               >
                 <a
-                  href="https://drive.google.com/file/d/1TSFQNjWg_X5xX8HTtjBmC8r7QuGo_9qA/view?usp=sharing"
+                  href={PUBLIC_LINKS.RESUME}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-4 glass border-white/10 text-cyan-400 font-black rounded-2xl flex items-center justify-center gap-3 active:scale-95 transition-all text-lg"

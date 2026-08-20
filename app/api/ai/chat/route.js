@@ -4,9 +4,9 @@ import { handleAIChat } from '@/lib/ai/agent';
 
 export async function POST(request) {
   try {
-    // Basic rate limit by IP (in a real app, you might use headers['x-forwarded-for'])
-    // For Vercel edge/serverless, this is the best effort without a DB.
-    const ip = request.headers.get('x-forwarded-for') || '127.0.0.1';
+    const forwardedFor = request.headers.get('x-forwarded-for');
+    let ip = forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1';
+    if (ip.length > 45) ip = '127.0.0.1'; // basic sanity check for IPv6 length
     
     const rateLimitCheck = checkRateLimit(ip);
     if (!rateLimitCheck.success) {

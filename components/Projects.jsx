@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineExternalLink, HiOutlineCode, HiArrowRight, HiX, HiOutlineCheckCircle, HiOutlineSparkles, HiOutlineServer, HiOutlineDesktopComputer, HiOutlineDatabase } from "react-icons/hi";
+import { PUBLIC_LINKS } from "@/lib/constants";
 import Image from "next/image";
 import Container from "./Container";
 
@@ -174,7 +175,7 @@ export default function Projects() {
             </motion.p>
           </div>
           <motion.a
-            href="https://github.com/tahaimage8"
+            href={PUBLIC_LINKS.GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0 }}
@@ -308,7 +309,7 @@ export default function Projects() {
         
         <div className="mt-12 flex justify-center lg:hidden">
           <motion.a
-            href="https://github.com/tahaimage8"
+            href={PUBLIC_LINKS.GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

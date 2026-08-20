@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
+import { PUBLIC_LINKS } from '@/lib/constants';
 
 function formatText(text) {
   // Simple markdown-like formatter for bold text and lists
@@ -122,10 +123,10 @@ export default function ChatMessage({ message }) {
           transition={{ delay: 0.3 }}
           className="mt-3 flex flex-wrap gap-2 self-start"
         >
-          <a href="mailto:tahaimage8@gmail.com" className="px-4 py-2 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold hover:bg-cyan-500/30 transition-colors">
+          <a href={`mailto:${PUBLIC_LINKS.EMAIL}`} className="px-4 py-2 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold hover:bg-cyan-500/30 transition-colors">
             Email Taha
           </a>
-          <a href="https://github.com/tahaimage8" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-xl glass border border-white/10 text-gray-300 text-xs font-bold hover:text-white transition-colors flex items-center gap-1">
+          <a href={PUBLIC_LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-xl glass border border-white/10 text-gray-300 text-xs font-bold hover:text-white transition-colors flex items-center gap-1">
             <FaGithub size={12} /> GitHub
           </a>
         </motion.div>

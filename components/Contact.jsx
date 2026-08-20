@@ -6,6 +6,7 @@ import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker, HiCheckCircle, 
 import { FiSend } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import Container from "./Container";
+import { PUBLIC_LINKS } from "@/lib/constants";
 
 const Contact = memo(() => {
   const [formData, setFormData] = useState({
@@ -156,9 +157,9 @@ const Contact = memo(() => {
             {/* Social Links */}
             <div className="mt-12 sm:mt-16 flex justify-center lg:justify-start gap-4 sm:gap-5">
               {[
-                { icon: FaGithub, href: "https://github.com/tahaimage8", label: "GitHub" },
-                { icon: FaLinkedin, href: "https://www.linkedin.com/in/ibtesam-taha/", label: "LinkedIn" },
-                { icon: FaFacebook, href: "https://www.facebook.com/ibtesamtaha1", label: "Facebook" }
+                { icon: FaGithub, href: PUBLIC_LINKS.GITHUB, label: "GitHub" },
+                { icon: FaLinkedin, href: PUBLIC_LINKS.LINKEDIN, label: "LinkedIn" },
+                { icon: FaFacebook, href: PUBLIC_LINKS.FACEBOOK, label: "Facebook" }
               ].map((social, i) => (
                 <motion.a
                   key={i}

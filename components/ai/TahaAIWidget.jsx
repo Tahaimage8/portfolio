@@ -35,7 +35,9 @@ export default function TahaAIWidget() {
       const el = document.getElementById(action.target);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (action.type === 'open_resume') {
-      window.open('/resume.pdf', '_blank'); // Assuming standard resume path or adjust as needed
+      window.open('https://drive.google.com/file/d/1rpHSwdCkjSCTFdDJhZ6WfVsppqkvfi-h/view?usp=drive_link', '_blank', 'noopener,noreferrer');
+    } else if (action.type === 'open_github') {
+      window.open('https://github.com/tahaimage8', '_blank', 'noopener,noreferrer');
     } else if (action.type === 'text') {
       handleSendMessage(action.text);
     } else if (action.type === 'show_project') {
