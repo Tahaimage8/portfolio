@@ -18,6 +18,7 @@ export default function TahaAIWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const [agentStatus, setAgentStatus] = useState("");
   const messagesEndRef = useRef(null);
+  const isRequesting = useRef(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -68,8 +69,9 @@ export default function TahaAIWidget() {
 
   const handleSendMessage = async (customText = null) => {
     const textToSend = customText || input;
-    if (!textToSend.trim() || isLoading) return;
-
+    if (!textToSend.trim() || isLoading || isRequesting.current) return;
+    
+    isRequesting.current = true;
     setInput("");
     
     const newUserMessage = { role: 'user', content: textToSend };
@@ -106,6 +108,7 @@ export default function TahaAIWidget() {
     } finally {
       setIsLoading(false);
       setAgentStatus("");
+      isRequesting.current = false;
     }
   };
 
