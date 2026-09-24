@@ -10,7 +10,7 @@ import {
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { VscCode, VscServer } from "react-icons/vsc";
-import { HiOutlineShieldCheck, HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import { HiOutlineShieldCheck, HiOutlineDevicePhoneMobile, HiOutlineSparkles, HiOutlineCpuChip } from "react-icons/hi2";
 import Container from "./Container";
 
 const skillCategories = [
@@ -63,6 +63,16 @@ const skillCategories = [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
       { name: "Visual Studio Code", icon: VscCode, color: "#007ACC" }
+    ]
+  },
+  {
+    title: "Applied AI",
+    description: "INTEGRATING INTELLIGENT AI SYSTEMS",
+    skills: [
+      { name: "LangChain", icon: HiOutlineSparkles, color: "#38BDF8" },
+      { name: "VectorDB", icon: VscServer, color: "#A855F7" },
+      { name: "OpenAI API", icon: HiOutlineCpuChip, color: "#10A37F" },
+      { name: "RAG", icon: HiOutlineSparkles, color: "#06B6D4" }
     ]
   },
   {
