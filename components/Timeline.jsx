@@ -76,35 +76,33 @@ export default function Timeline() {
     {
       year: "2027",
       bgYear: "2027",
-      title: "Software Development",
+      title: "Enterprise Software Engineering",
       phase: "SOFTWARE",
       status: "PLANNED",
       statusType: "planned",
-      chips: ["C", "C++", "DSA", "Algorithms", "Python", "OOP", "SQL", "Software Development"],
-      desc: "Planning to strengthen my programming and problem-solving foundation, then apply it through Python, object-oriented programming, databases and real-world software development.",
+      chips: ["TypeScript", "PostgreSQL", "Prisma ORM", "SaaS Architecture"],
+      desc: "Focusing on building highly scalable backends, microservices, and SaaS platforms using TypeScript, PostgreSQL, Prisma ORM, and advanced system architecture.",
       roadmap: [
-        { category: "Programming", items: ["C", "C++", "Programming Logic", "Problem Solving"] },
-        { category: "Data Structures & Algorithms", items: ["Arrays", "Linked Lists", "Stack", "Queue", "Trees", "Graphs", "Searching", "Sorting", "BFS", "DFS", "Dynamic Programming", "Algorithms"] },
-        { category: "Python", items: ["Python Programming", "Functions", "Modules", "Object-Oriented Programming"] },
-        { category: "OOP", items: ["Classes", "Objects", "Inheritance", "Encapsulation", "Polymorphism"] },
-        { category: "Databases", items: ["SQL", "Relational Databases", "Database Design", "Queries", "Database Fundamentals"] },
-        { category: "Software Development", items: ["Software Development Principles", "Project Structure", "Clean Code", "Debugging", "Testing", "Git & GitHub", "Application Architecture Basics", "Building Real Software Projects"] }
+        { category: "Backend & Microservices", items: ["TypeScript", "Node.js", "Microservices", "REST & gRPC APIs", "System Architecture"] },
+        { category: "Databases & ORM", items: ["PostgreSQL", "Prisma ORM", "Database Indexing", "Transactions", "Schema Migration"] },
+        { category: "SaaS Architecture", items: ["Multi-tenancy", "Authentication & RBAC", "Redis Caching", "Docker & Kubernetes", "CI/CD"] },
+        { category: "Software Quality & Design", items: ["System Design Principles", "Clean Architecture", "Load Balancing", "Automated Testing", "Performance Optimization"] }
       ]
     },
     {
       year: "Future",
       bgYear: "FUTURE",
-      title: "AI & Machine Learning",
+      title: "Applied AI, Machine Learning & Intelligent Systems",
       phase: "AI",
       status: "NEXT CHAPTER",
       statusType: "future",
-      chips: ["Python", "Data", "Machine Learning", "Deep Learning", "AI"],
-      desc: "A future goal focused on understanding data, machine learning and intelligent systems, eventually building AI-powered applications.",
+      chips: ["Python", "Machine Learning", "Deep Learning", "PyTorch", "Data Science", "Agentic AI"],
+      desc: "Pioneering intelligent software systems by mastering data science, statistical modeling, neural networks, and integrating autonomous agentic AI capabilities into modern web platforms.",
       roadmap: [
-        { category: "AI/ML Foundations", items: ["Python", "Mathematics", "Statistics", "Probability", "Linear Algebra"] },
-        { category: "Data", items: ["NumPy", "Pandas", "Data Processing", "Data Analysis", "Data Visualization"] },
-        { category: "Machine Learning", items: ["Machine Learning Fundamentals", "Supervised Learning", "Unsupervised Learning", "Model Training", "Model Evaluation", "Feature Engineering"] },
-        { category: "Advanced Future Learning", items: ["Neural Networks", "Deep Learning", "PyTorch or TensorFlow", "AI-powered Applications"] }
+        { category: "AI & Mathematical Foundations", items: ["Python Data Stack", "Linear Algebra", "Calculus & Optimization", "Statistics & Probability"] },
+        { category: "Data Science & Processing", items: ["NumPy", "Pandas", "Data Wrangling", "Exploratory Data Analysis", "Feature Engineering"] },
+        { category: "Machine Learning & Modeling", items: ["Supervised & Unsupervised Learning", "Scikit-Learn", "Model Training & Evaluation", "Pipeline Engineering"] },
+        { category: "Deep Learning & Modern AI", items: ["Neural Networks", "PyTorch", "Transformers & LLMs", "Agentic Workflows", "AI Systems Deployment"] }
       ]
     }
   ], []);
