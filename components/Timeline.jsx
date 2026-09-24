@@ -92,17 +92,17 @@ export default function Timeline() {
     {
       year: "Future",
       bgYear: "FUTURE",
-      title: "Applied AI, Machine Learning & Intelligent Systems",
+      title: "Applied AI & LLM Integration",
       phase: "AI",
       status: "NEXT CHAPTER",
       statusType: "future",
-      chips: ["Python", "Machine Learning", "Deep Learning", "PyTorch", "Data Science", "Agentic AI"],
-      desc: "Pioneering intelligent software systems by mastering data science, statistical modeling, neural networks, and integrating autonomous agentic AI capabilities into modern web platforms.",
+      chips: ["LangChain", "VectorDB", "OpenAI", "RAG Systems"],
+      desc: "Integrating Large Language Models (LLMs) into production web applications using LangChain, RAG systems, and Vector Databases to build smart, AI-powered software.",
       roadmap: [
-        { category: "AI & Mathematical Foundations", items: ["Python Data Stack", "Linear Algebra", "Calculus & Optimization", "Statistics & Probability"] },
-        { category: "Data Science & Processing", items: ["NumPy", "Pandas", "Data Wrangling", "Exploratory Data Analysis", "Feature Engineering"] },
-        { category: "Machine Learning & Modeling", items: ["Supervised & Unsupervised Learning", "Scikit-Learn", "Model Training & Evaluation", "Pipeline Engineering"] },
-        { category: "Deep Learning & Modern AI", items: ["Neural Networks", "PyTorch", "Transformers & LLMs", "Agentic Workflows", "AI Systems Deployment"] }
+        { category: "LLM Frameworks & APIs", items: ["LangChain", "OpenAI APIs", "Anthropic Claude", "Prompt Engineering"] },
+        { category: "Retrieval-Augmented Generation", items: ["RAG Architecture", "Document Chunking", "Semantic Search", "Hybrid Search"] },
+        { category: "Vector Databases", items: ["Pinecone", "ChromaDB", "pgvector", "Embeddings"] },
+        { category: "AI Application Engineering", items: ["Agentic Workflows", "Function Calling", "AI Fine-tuning", "Production AI Deployment"] }
       ]
     }
   ], []);
