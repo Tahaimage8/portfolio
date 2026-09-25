@@ -5,16 +5,17 @@ import TahaAIWidget from "@/components/ai/TahaAIWidget";
 
 export const metadata = {
   metadataBase: new URL("https://portfolio-ibtesam-taha.vercel.app"),
-  title: "Ibtesam Taha | Full Stack Developer",
+  title: "Ibtasam Taha | Full Stack Software Engineer",
   description:
-    "Full Stack Developer building modern web applications with Next.js, TypeScript, Node.js, and scalable backend technologies.",
+    "Full Stack Software Engineer building enterprise applications, AI systems, scalable backends with TypeScript & Python.",
   keywords: [
-    "Ibtesam",
+    "Ibtasam",
     "Taha",
-    "Ibtesam Taha",
+    "Ibtasam Taha",
     "Taha developer",
-    "Ibtesam portfolio",
-    "Full Stack Developer",
+    "Ibtasam portfolio",
+    "Full Stack Software Engineer",
+    "Software Engineer",
     "Frontend Developer",
     "Backend Developer",
     "React Developer",
@@ -26,9 +27,9 @@ export const metadata = {
     canonical: "/",
   },
   authors: [
-    { name: "Ibtesam Taha", url: "https://portfolio-ibtesam-taha.vercel.app" }
+    { name: "Ibtasam Taha", url: "https://portfolio-ibtesam-taha.vercel.app" }
   ],
-  creator: "Ibtesam Taha",
+  creator: "Ibtasam Taha",
 
   verification: {
     google: "Uu0xY9pNNCu16yRJRmUN9kc3PNR2zcXdiEBbIywuU0Y"
@@ -38,25 +39,25 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://portfolio-ibtesam-taha.vercel.app",
-    title: "Ibtesam Taha | Full Stack Developer",
+    title: "Ibtasam Taha | Full Stack Software Engineer",
     description:
-      "Full Stack Developer building modern web applications with Next.js, TypeScript, Node.js, and scalable backend technologies.",
-    siteName: "Ibtesam Taha Portfolio",
+      "Full Stack Software Engineer building enterprise applications, AI systems, scalable backends with TypeScript & Python.",
+    siteName: "Ibtasam Taha Portfolio",
     images: [
       {
         url: "/images/profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Ibtesam Taha | Full Stack Developer Portfolio",
+        alt: "Ibtasam Taha | Full Stack Software Engineer Portfolio",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Ibtesam Taha | Full Stack Developer",
+    title: "Ibtasam Taha | Full Stack Software Engineer",
     description:
-      "Full Stack Developer building modern web applications with Next.js, TypeScript, Node.js, and scalable backend technologies.",
+      "Full Stack Software Engineer building enterprise applications, AI systems, scalable backends with TypeScript & Python.",
     images: ["/images/profile.jpg"],
   },
 };
@@ -64,11 +65,11 @@ export const metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Ibtesam Taha",
-  alternateName: ["Taha", "Ibtesam", "Taha Developer"],
+  name: "Ibtasam Taha",
+  alternateName: ["Taha", "Ibtasam", "Taha Developer"],
   url: "https://portfolio-ibtesam-taha.vercel.app",
-  jobTitle: "Full Stack Developer",
-  description: "Full Stack Developer building modern web applications across frontend, backend, databases, and deployment.",
+  jobTitle: "Full Stack Software Engineer",
+  description: "Full Stack Software Engineer building enterprise applications, AI-powered systems, and scalable backends across TypeScript & Python.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "Bangladesh",
