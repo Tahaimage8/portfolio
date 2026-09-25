@@ -9,7 +9,7 @@ import {
   SiFramer, SiGreensock, SiFigma, SiDaisyui
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { VscCode, VscServer } from "react-icons/vsc";
+import { VscCode, VscServer, VscDatabase } from "react-icons/vsc";
 import { HiOutlineShieldCheck, HiOutlineDevicePhoneMobile, HiOutlineSparkles, HiOutlineCpuChip } from "react-icons/hi2";
 import Container from "./Container";
 
@@ -32,11 +32,11 @@ const skillCategories = [
     title: "Backend Development",
     description: "BUILDING SECURE AND SCALABLE APIS",
     skills: [
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
       { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
       { name: "Express.js", icon: SiExpress, color: "#E2E8F0" },
       { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
       { name: "REST APIs", icon: VscServer, color: "#94A3B8" },
       { name: "Better Auth", icon: HiOutlineShieldCheck, color: "#06B6D4" },
       { name: "Authentication", icon: HiOutlineShieldCheck, color: "#38BDF8" }
@@ -46,23 +46,10 @@ const skillCategories = [
     title: "Database",
     description: "MANAGING RELIABLE APPLICATION DATA",
     skills: [
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "SQL", icon: VscDatabase, color: "#00758F" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
-      { name: "Prisma ORM", icon: SiPrisma, color: "#E2E8F0" }
-    ]
-  },
-  {
-    title: "DevOps & Cloud",
-    description: "DEPLOYING MODERN WEB APPLICATIONS",
-    skills: [
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "Nginx", icon: SiNginx, color: "#009639" },
-      { name: "AWS", icon: FaAws, color: "#FF9900" },
-      { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
-      { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
-      { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
-      { name: "Visual Studio Code", icon: VscCode, color: "#007ACC" }
+      { name: "Prisma ORM", icon: SiPrisma, color: "#E2E8F0" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" }
     ]
   },
   {
@@ -72,7 +59,25 @@ const skillCategories = [
       { name: "LangChain", icon: HiOutlineSparkles, color: "#38BDF8" },
       { name: "VectorDB", icon: VscServer, color: "#A855F7" },
       { name: "OpenAI API", icon: HiOutlineCpuChip, color: "#10A37F" },
-      { name: "RAG", icon: HiOutlineSparkles, color: "#06B6D4" }
+      { name: "RAG", icon: HiOutlineSparkles, color: "#06B6D4" },
+      { name: "LangGraph", icon: HiOutlineCpuChip, color: "#818CF8" },
+      { name: "Agentic AI", icon: HiOutlineSparkles, color: "#EC4899" },
+      { name: "Embeddings", icon: VscServer, color: "#38BDF8" }
+    ]
+  },
+  {
+    title: "DevOps & Cloud",
+    description: "DEPLOYING MODERN WEB APPLICATIONS",
+    skills: [
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Containerization", icon: SiDocker, color: "#38BDF8" },
+      { name: "CI/CD Pipelines", icon: VscServer, color: "#A855F7" },
+      { name: "Nginx", icon: SiNginx, color: "#009639" },
+      { name: "AWS", icon: FaAws, color: "#FF9900" },
+      { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
+      { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
+      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" }
     ]
   },
   {
