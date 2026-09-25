@@ -31,10 +31,15 @@ export async function POST(request) {
     // Call the AI Agent
     const result = await handleAIChat(validation.sanitizedMessage, history || []);
 
-    if (!result.success) {
+    if (!result || !result.success) {
       return NextResponse.json(
-        { success: false, message: result.message, actions: [] },
-        { status: 503 }
+        { 
+          success: false, 
+          text: result?.text || result?.message || "I am currently undergoing maintenance. Please reach out to Ibtasam directly.", 
+          message: result?.message || result?.text || "I am currently undergoing maintenance. Please reach out to Ibtasam directly.", 
+          actions: result?.actions || [{ type: 'show_contact_cta' }] 
+        },
+        { status: 200 }
       );
     }
 
@@ -45,10 +50,11 @@ export async function POST(request) {
     return NextResponse.json(
       { 
         success: false, 
-        message: "Taha AI is temporarily unavailable. You can still explore the portfolio using the buttons below.",
+        text: "I am currently undergoing maintenance. Please reach out to Ibtasam directly.",
+        message: "I am currently undergoing maintenance. Please reach out to Ibtasam directly.",
         actions: [{ type: 'show_contact_cta' }]
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 }
