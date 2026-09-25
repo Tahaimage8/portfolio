@@ -16,70 +16,72 @@ export default function Services() {
   const services = useMemo(() => [
     {
       icon: HiOutlineDesktopComputer,
-      title: "Frontend Development",
-      desc: "Building clean, responsive, and user-friendly interfaces using React.js, Next.js, Tailwind CSS, and modern frontend practices.",
+      title: "SaaS & Web Architecture",
+      desc: "Engineering modern, high-performance web applications and SaaS interfaces using Next.js App Router, React, TypeScript, and responsive component systems.",
       points: [
-        "React & Next.js UI",
-        "Responsive Layouts",
-        "Clean Component Structure"
+        "Next.js App Router UI",
+        "Scalable SaaS Architecture",
+        "High Performance & Motion"
       ],
       details: [
-        "React.js interface development",
-        "Next.js application structure",
-        "Tailwind CSS responsive design",
-        "Reusable component architecture",
-        "Modern UI implementation",
-        "Mobile-first responsive layout",
-        "UI optimization and clean code practice",
-        "Dynamic routing",
-        "Smooth animations",
-        "Interactive frontend experiences"
+        "Modern Next.js & React interface engineering",
+        "SaaS web application architecture",
+        "Tailwind CSS & HeroUI responsive design",
+        "Reusable component & design system architecture",
+        "State management & optimistic UI updates",
+        "Framer Motion & GSAP animations",
+        "Web Vitals & performance optimization",
+        "SEO & Server-Side Rendering (SSR)",
+        "TypeScript integration & type safety",
+        "Interactive, enterprise-grade user experiences"
       ],
       color: "from-cyan-500 to-blue-600",
       shadow: "shadow-cyan-500/20"
     },
     {
       icon: HiOutlineServer,
-      title: "Backend Development",
-      desc: "Developing backend APIs and database-connected systems using Node.js, Express.js, MongoDB, and Firebase.",
+      title: "Enterprise Backend Systems",
+      desc: "Architecting scalable REST APIs, microservices, and high-concurrency backend infrastructure using TypeScript (Node.js/Next.js), Python (FastAPI), PostgreSQL, and Prisma ORM.",
       points: [
-        "REST API Development",
-        "MongoDB Integration",
-        "Firebase Authentication"
+        "TypeScript & Python APIs",
+        "PostgreSQL & Prisma ORM",
+        "Microservices & Auth"
       ],
       details: [
-        "Node.js backend development",
-        "Express.js REST API development",
-        "MongoDB database integration",
-        "Firebase authentication system",
-        "CRUD functionality",
-        "API routing and middleware",
-        "Secure backend structure",
-        "Backend logic organization",
-        "Real-world backend workflow"
+        "TypeScript (Node.js/Express/NestJS) API development",
+        "Python (FastAPI) high-performance backends",
+        "PostgreSQL relational database design & schema migrations",
+        "Prisma ORM & query optimization",
+        "MongoDB document modeling & driver integration",
+        "Authentication & Role-Based Access Control (RBAC)",
+        "RESTful API architecture & gRPC services",
+        "Redis caching & pub/sub messaging",
+        "Docker containerization & environment isolation",
+        "Secure, enterprise-grade backend infrastructure"
       ],
       color: "from-purple-500 to-indigo-600",
       shadow: "shadow-purple-500/20"
     },
     {
       icon: HiOutlineGlobeAlt,
-      title: "Full Stack Web Apps",
-      desc: "Creating complete web applications with frontend, backend, authentication, database, and deployment-ready architecture.",
+      title: "AI-Powered Software Solutions",
+      desc: "Building end-to-end intelligent applications by integrating Large Language Models (LLMs), LangChain, RAG systems, and Vector Databases into full-stack web platforms.",
       points: [
-        "Frontend + Backend Integration",
-        "Authentication System",
-        "Deployment Ready Apps"
+        "LLM & LangChain Integration",
+        "RAG & Vector Databases",
+        "End-to-End Enterprise Apps"
       ],
       details: [
-        "Complete frontend + backend integration",
-        "Authentication systems",
-        "Database-connected applications",
-        "API integration",
-        "Responsive dashboard/web app structure",
-        "Deployment-ready architecture",
-        "Full application workflow",
-        "Modern stack workflow",
-        "End-to-end application development"
+        "Large Language Model (LLM) API integration (OpenAI, Claude)",
+        "LangChain & LangGraph agentic workflow development",
+        "Retrieval-Augmented Generation (RAG) system engineering",
+        "Vector Database implementation (Pinecone, ChromaDB, pgvector)",
+        "Semantic search & document embedding pipelines",
+        "Full-stack Next.js + FastAPI AI application architecture",
+        "Real-time AI streaming & interactive UI",
+        "Prompt engineering & system guardrails",
+        "End-to-end production deployment & monitoring",
+        "Intelligent software system development"
       ],
       color: "from-blue-500 to-cyan-600",
       shadow: "shadow-blue-500/20"
@@ -124,8 +126,7 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-7 font-medium"
           >
-            I build modern, responsive, and scalable web solutions for frontend, 
-            backend, and full stack development needs.
+            I engineer enterprise-grade SaaS architectures, scalable backend systems, and AI-powered software solutions.
           </motion.p>
         </div>
 
