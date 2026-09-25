@@ -147,17 +147,17 @@ export default function TahaAIWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] w-[calc(100vw-48px)] sm:w-[400px] h-[600px] max-h-[calc(100vh-100px)] glass rounded-3xl border border-cyan-500/30 shadow-2xl flex flex-col overflow-hidden bg-dark/95"
+            className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] w-[calc(100vw-48px)] sm:w-[400px] h-[600px] max-h-[calc(100vh-100px)] rounded-3xl border border-cyan-900/40 shadow-[0_20px_50px_rgba(0,0,0,0.9)] flex flex-col overflow-hidden bg-[#080d1a]/98 backdrop-blur-2xl"
           >
             {/* Header */}
-            <div className="p-4 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
+            <div className="p-4 border-b border-cyan-900/30 flex items-center justify-between bg-[#0d1527]/90 backdrop-blur-md">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
                   <HiOutlineChatAlt2 className="text-cyan-400" size={20} />
                 </div>
                 <div>
                   <h3 className="text-white font-black text-sm tracking-wide">Taha AI</h3>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">AI Software Assistant</p>
+                  <p className="text-[10px] text-cyan-400 uppercase tracking-widest font-bold">AI Software Assistant</p>
                 </div>
               </div>
               <button
@@ -170,7 +170,7 @@ export default function TahaAIWidget() {
             </div>
 
             {/* Messages Area */}
-            <div className="flex-1 relative overflow-y-auto p-4 custom-scrollbar flex flex-col">
+            <div className="flex-1 relative overflow-y-auto p-4 custom-scrollbar flex flex-col bg-[#080d1a]">
               {messages.map((msg, i) => (
                 <ChatMessage key={i} message={msg} />
               ))}
@@ -179,7 +179,7 @@ export default function TahaAIWidget() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center gap-2 mb-4 text-gray-400 text-xs font-bold uppercase tracking-wider"
+                  className="flex items-center gap-2 mb-4 text-cyan-400 text-xs font-bold uppercase tracking-wider"
                 >
                   <span className="flex gap-1">
                     <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -199,7 +199,7 @@ export default function TahaAIWidget() {
             </div>
 
             {/* Input Area */}
-            <div className="p-4 border-t border-white/10 bg-white/[0.02]">
+            <div className="p-4 border-t border-cyan-900/30 bg-[#0d1527]/90 backdrop-blur-md">
               <form
                 onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
                 className="flex items-center gap-2 relative"
@@ -209,7 +209,7 @@ export default function TahaAIWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about my projects, skills, or experience..."
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-cyan-500/50 transition-all font-medium placeholder:text-gray-600"
+                  className="w-full bg-[#131d33] border border-cyan-900/40 rounded-2xl pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-cyan-500/70 transition-all font-medium placeholder:text-gray-400"
                   disabled={isLoading}
                 />
                 <button

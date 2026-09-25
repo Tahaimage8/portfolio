@@ -20,7 +20,7 @@ function formatText(text) {
 
     if (line.startsWith('* ')) {
       return (
-        <li key={i} className="ml-4 list-disc text-sm text-gray-300 leading-relaxed">
+        <li key={i} className="ml-4 list-disc text-sm text-gray-200 leading-relaxed">
           {lineContent.slice(1)} {/* Remove the "* " */}
         </li>
       );
@@ -32,7 +32,7 @@ function formatText(text) {
     }
 
     return (
-      <p key={i} className="text-sm text-gray-300 leading-relaxed mb-1">
+      <p key={i} className="text-sm text-gray-200 leading-relaxed mb-1">
         {lineContent}
       </p>
     );
@@ -49,10 +49,10 @@ export default function ChatMessage({ message }) {
       className={`flex flex-col mb-4 ${isUser ? 'items-end' : 'items-start'}`}
     >
       <div
-        className={`max-w-[85%] rounded-2xl px-4 py-3 ${
+        className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-md ${
           isUser
-            ? 'bg-cyan-500/20 border border-cyan-500/30 text-white rounded-br-none'
-            : 'glass border border-white/5 text-gray-300 rounded-bl-none'
+            ? 'bg-cyan-500/25 border border-cyan-400/40 text-white rounded-br-none'
+            : 'bg-[#131d33] border border-cyan-900/40 text-gray-200 rounded-bl-none'
         }`}
       >
         {!isUser && (
