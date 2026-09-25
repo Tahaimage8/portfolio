@@ -43,7 +43,7 @@ export default function Projects() {
       live: "https://dine-spot-client-chi.vercel.app",
       image: "/projects/dinesport.png",
       caseStudy: {
-        role: "Full Stack Developer (Frontend, Backend & Database Architecture)",
+        role: "Full Stack Software Engineer (Frontend, Backend & Database Architecture)",
         overview: "DineSpot is a production-grade restaurant discovery and reservation platform built using TypeScript across both frontend and backend architectures.",
         frontend: [
           "Next.js App Router & React",
@@ -84,7 +84,7 @@ export default function Projects() {
       live: "https://rolebix-client-side.vercel.app/",
       image: "/projects/rolebix.png",
       caseStudy: {
-        role: "Full Stack Developer",
+        role: "Full Stack Software Engineer",
         overview: "Rolebix connects job seekers with recruiters through role-tailored dashboards and secure Stripe monetization.",
         frontend: ["Next.js App Router", "Tailwind CSS", "Framer Motion", "Role Dashboards"],
         backend: ["Node.js & Express API", "MongoDB", "Better Auth", "Stripe API"],
@@ -102,7 +102,7 @@ export default function Projects() {
       live: "https://raktanex-client.vercel.app/",
       image: "/projects/raktanex.png",
       caseStudy: {
-        role: "Full Stack Developer",
+        role: "Full Stack Software Engineer",
         overview: "RaktaNex streamlines emergency blood requests and connects volunteers with local blood donors.",
         frontend: ["Next.js", "Tailwind CSS", "Donor Search UI"],
         backend: ["Express.js REST API", "MongoDB", "JWT Auth"],
