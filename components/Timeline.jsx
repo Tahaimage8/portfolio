@@ -3,6 +3,7 @@
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, useReducedMotion } from "framer-motion";
 import { useRef, useMemo, useState, useEffect } from "react";
 import Container from "./Container";
+import GithubCalendarWidget from "./GithubCalendarWidget";
 import { 
   HiOutlineChevronDown, 
   HiOutlineChevronUp, 
@@ -80,13 +81,13 @@ export default function Timeline() {
       phase: "SOFTWARE",
       status: "PLANNED",
       statusType: "planned",
-      chips: ["TypeScript", "PostgreSQL", "Prisma ORM", "SaaS Architecture"],
-      desc: "Focusing on building highly scalable backends, microservices, and SaaS platforms using TypeScript, PostgreSQL, Prisma ORM, and advanced system architecture.",
+      chips: ["TypeScript", "PostgreSQL", "Python", "FastAPI"],
+      desc: "Architecting highly scalable backends, microservices, and SaaS platforms using TypeScript, PostgreSQL, Prisma ORM, Python, and FastAPI.",
       roadmap: [
-        { category: "Backend & Microservices", items: ["TypeScript", "Node.js", "Microservices", "REST & gRPC APIs", "System Architecture"] },
+        { category: "TypeScript & Node.js Backend", items: ["TypeScript", "Node.js", "Express / NestJS", "REST & gRPC APIs", "Microservices"] },
+        { category: "Python & FastAPI Backend", items: ["Python", "FastAPI", "Async Architecture", "API Design", "Pydantic Schemas"] },
         { category: "Databases & ORM", items: ["PostgreSQL", "Prisma ORM", "Database Indexing", "Transactions", "Schema Migration"] },
-        { category: "SaaS Architecture", items: ["Multi-tenancy", "Authentication & RBAC", "Redis Caching", "Docker & Kubernetes", "CI/CD"] },
-        { category: "Software Quality & Design", items: ["System Design Principles", "Clean Architecture", "Load Balancing", "Automated Testing", "Performance Optimization"] }
+        { category: "SaaS Architecture & System Design", items: ["Scalable System Architecture", "Multi-tenancy", "Redis Caching", "Docker & Kubernetes", "CI/CD"] }
       ]
     },
     {
@@ -96,13 +97,13 @@ export default function Timeline() {
       phase: "AI",
       status: "NEXT CHAPTER",
       statusType: "future",
-      chips: ["LangChain", "VectorDB", "OpenAI", "RAG Systems"],
+      chips: ["LangChain", "VectorDB", "Agentic AI", "RAG"],
       desc: "Integrating Large Language Models (LLMs) into production web applications using LangChain, RAG systems, and Vector Databases to build smart, AI-powered software.",
       roadmap: [
         { category: "LLM Frameworks & APIs", items: ["LangChain", "OpenAI APIs", "Anthropic Claude", "Prompt Engineering"] },
         { category: "Retrieval-Augmented Generation", items: ["RAG Architecture", "Document Chunking", "Semantic Search", "Hybrid Search"] },
         { category: "Vector Databases", items: ["Pinecone", "ChromaDB", "pgvector", "Embeddings"] },
-        { category: "AI Application Engineering", items: ["Agentic Workflows", "Function Calling", "AI Fine-tuning", "Production AI Deployment"] }
+        { category: "Agentic AI & Engineering", items: ["Agentic Workflows", "Function Calling", "AI Fine-tuning", "Production AI Deployment"] }
       ]
     }
   ], []);
@@ -420,6 +421,9 @@ export default function Timeline() {
             })}
           </div>
         </div>
+
+        {/* GitHub Contribution Graph Widget */}
+        <GithubCalendarWidget username="Tahaimage8" />
       </Container>
     </section>
   );
