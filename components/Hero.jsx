@@ -67,7 +67,7 @@ const Hero = memo(() => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium will-change-[opacity,transform]"
             >
-              I’m Ibtesam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Software Engineer</span>. 
+              I’m Ibtasam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Software Engineer</span>. 
               I craft responsive and modern web applications with a focus on clean UI and performance.
             </motion.p>
             
@@ -80,7 +80,7 @@ const Hero = memo(() => {
                 href="#projects"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 bg-white text-dark font-black rounded-2xl flex items-center gap-3 transition-transform btn-shine shadow-2xl shadow-white/5 will-change-transform"
+                className="px-10 py-5 bg-white text-dark font-black rounded-2xl flex items-center gap-3 transition-all btn-shine btn-neon-glow btn-pulse-cyan shadow-2xl will-change-transform"
               >
                 View Projects <HiArrowRight size={20} />
               </motion.a>
@@ -88,7 +88,7 @@ const Hero = memo(() => {
                 href="#contact"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 glass border-white/10 text-white font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-white/5 will-change-transform"
+                className="px-10 py-5 glass border-white/10 text-white font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-white/5 hover:border-cyan-500/30 will-change-transform"
               >
                 Contact Me
               </motion.a>
@@ -98,7 +98,7 @@ const Hero = memo(() => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-10 py-5 glass border-white/10 text-cyan-400 font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-cyan-500/10 group will-change-transform"
+                className="px-10 py-5 glass border-cyan-500/30 text-cyan-400 font-black rounded-2xl flex items-center gap-3 transition-all hover:bg-cyan-500/10 btn-neon-glow group will-change-transform"
               >
                 Download CV <FiDownload size={20} className="group-hover:translate-y-1 transition-transform" />
               </motion.a>
@@ -112,8 +112,8 @@ const Hero = memo(() => {
             >
               {[
                 { val: "10+", label: "Projects" },
-                { val: "95%", label: "Course" },
-                { val: "24/7", label: "Learning" }
+                { val: "Clean", label: "Architecture" },
+                { val: "Scalable", label: "Systems" }
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col gap-1">
                   <span className="text-2xl md:text-3xl font-black text-white tracking-tighter">{stat.val}</span>
@@ -157,7 +157,7 @@ const Hero = memo(() => {
                   {!imageError ? (
                     <Image
                       src="/images/profile.jpg"
-                      alt="Ibtesam Taha"
+                      alt="Ibtasam Taha"
                       fill
                       sizes="(max-width: 768px) 300px, 420px"
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
