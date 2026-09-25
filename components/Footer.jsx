@@ -23,10 +23,10 @@ const Footer = memo(() => {
               whileHover={{ scale: 1.05 }}
               className="text-3xl font-black text-white tracking-[0.2em] mb-4 block will-change-transform"
             >
-              IBTESAM<span className="text-cyan-500">.</span>
+              IBTASAM<span className="text-cyan-500">.</span>
             </motion.a>
             <p className="text-gray-500 text-sm font-bold uppercase tracking-[0.3em]">
-              Creative Frontend Engineer
+              Full Stack Software Engineer
             </p>
           </div>
 
@@ -39,7 +39,7 @@ const Footer = memo(() => {
             </div>
             
             <p className="text-gray-600 text-[10px] font-bold uppercase tracking-widest text-center">
-              © {currentYear} Ibtesam Taha. Crafted with Excellence.
+              © {currentYear} Ibtasam Taha. Engineered with Precision & Clean Code.
             </p>
           </div>
 

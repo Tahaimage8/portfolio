@@ -236,7 +236,7 @@ const Contact = memo(() => {
                       id="contact-name"
                       name="name"
                       type="text" 
-                      placeholder="Ibtesam Taha"
+                      placeholder="Ibtasam Taha"
                       value={formData.name}
                       onChange={handleChange}
                       aria-invalid={errors.name ? "true" : "false"}
