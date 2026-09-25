@@ -11,7 +11,7 @@ export default function TahaAIWidget() {
   const [messages, setMessages] = useState([
     {
       role: 'model',
-      content: "Hi! I'm Taha AI 👋\nI can help you explore Taha's projects, skills, technical background, and career interests. If you're hiring, I can also compare your role requirements with his verified portfolio.",
+      content: "Hi! I'm Taha AI 👋\nI am the intelligent assistant for Ibtasam, a Full Stack Software Engineer specializing in Enterprise architecture and AI integration. I can help you explore Ibtasam's backend systems, AI applications, project case studies, and enterprise software capabilities.",
     }
   ]);
   const [input, setInput] = useState("");
@@ -126,11 +126,15 @@ export default function TahaAIWidget() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full bg-cyan-950/80 border border-cyan-500/50 text-cyan-400 font-bold shadow-[0_0_20px_rgba(6,182,212,0.3)] backdrop-blur-md hover:bg-cyan-900/80 transition-all"
-            aria-label="Ask Taha AI"
+            className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-5 py-3 rounded-full bg-cyan-950/90 border border-cyan-500/50 text-cyan-400 font-bold shadow-[0_0_25px_rgba(6,182,212,0.4)] backdrop-blur-md hover:bg-cyan-900/90 transition-all"
+            aria-label="AI Agent Online"
           >
-            <HiOutlineSparkles size={20} />
-            <span className="hidden sm:inline">Ask Taha AI</span>
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <HiOutlineSparkles size={18} />
+            <span className="hidden sm:inline">AI Agent Online</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -153,7 +157,7 @@ export default function TahaAIWidget() {
                 </div>
                 <div>
                   <h3 className="text-white font-black text-sm tracking-wide">Taha AI</h3>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">AI Portfolio Assistant</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">AI Software Assistant</p>
                 </div>
               </div>
               <button
