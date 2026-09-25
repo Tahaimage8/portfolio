@@ -41,15 +41,15 @@ export default function Home() {
 
         {/* Visually Hidden SEO Content */}
         <div className="sr-only">
-          <h2>Ibtesam Taha - Full Stack Developer</h2>
+          <h2>Ibtasam Taha - Full Stack Software Engineer</h2>
           <p>
-            Welcome to the official portfolio of <strong>Ibtesam Taha</strong>, also known as <strong>Taha</strong> or <strong>Taha Developer</strong>. I am a passionate <strong>Full Stack Developer</strong> building modern web applications across frontend, backend, databases, and deployment. I specialize in creating fast, responsive, and user-friendly web solutions using Next.js, React, TypeScript, Node.js, Express, MongoDB, and PostgreSQL. Explore my portfolio to view my full-stack projects including DineSpot.
+            Welcome to the official portfolio of <strong>Ibtasam Taha</strong>, also known as <strong>Taha</strong> or <strong>Taha Developer</strong>. I am a passionate <strong>Full Stack Software Engineer</strong> building production-grade enterprise applications and AI-powered systems across frontend, backend, databases, and deployment. I specialize in building scalable backends and APIs using TypeScript (Node.js/Next.js) and Python (FastAPI), backed by PostgreSQL, MongoDB, and Prisma ORM. Explore my portfolio to view my projects including DineSpot.
           </p>
           <nav aria-label="Internal Links">
             <ul>
-              <li><Link href="/about">About Ibtesam Taha</Link></li>
-              <li><Link href="/projects">Full Stack Developer Projects</Link></li>
-              <li><Link href="/contact">Contact Full Stack Developer</Link></li>
+              <li><Link href="/about">About Ibtasam Taha</Link></li>
+              <li><Link href="/projects">Full Stack Software Engineer Projects</Link></li>
+              <li><Link href="/contact">Contact Full Stack Software Engineer</Link></li>
             </ul>
           </nav>
         </div>
