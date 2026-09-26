@@ -4,37 +4,96 @@ import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import { PUBLIC_LINKS } from '@/lib/constants';
 
-function formatText(text) {
-  // Simple markdown-like formatter for bold text and lists
+function formatInlineText(text) {
   if (!text) return null;
   
-  return text.split('\n').map((line, i) => {
-    // Process bold text
-    const parts = line.split(/(\*\*.*?\*\*)/g);
-    const lineContent = parts.map((part, j) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={j} className="text-white font-bold">{part.slice(2, -2)}</strong>;
-      }
-      return part;
-    });
-
-    if (line.startsWith('* ')) {
+  // Split by inline backticks `code` first
+  const backtickParts = text.split(/(`.*?`)/g);
+  
+  return backtickParts.map((part, index) => {
+    if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
+      const codeContent = part.slice(1, -1);
       return (
-        <li key={i} className="ml-4 list-disc text-sm text-gray-200 leading-relaxed">
-          {lineContent.slice(1)} {/* Remove the "* " */}
-        </li>
+        <code 
+          key={index} 
+          className="px-1.5 py-0.5 my-0.5 rounded bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 font-mono text-[11px] break-all inline-block max-w-full"
+        >
+          {codeContent}
+        </code>
       );
     }
     
-    // Empty line
-    if (line.trim() === '') {
-      return <br key={i} />;
+    // Process bold text **bold**
+    const boldParts = part.split(/(\*\*.*?\*\*)/g);
+    return boldParts.map((bPart, bIndex) => {
+      if (bPart.startsWith('**') && bPart.endsWith('**') && bPart.length > 4) {
+        return <strong key={`${index}-${bIndex}`} className="text-white font-bold">{bPart.slice(2, -2)}</strong>;
+      }
+      return bPart;
+    });
+  });
+}
+
+function formatText(text) {
+  if (!text) return null;
+
+  // Split content by code blocks ```...```
+  const codeBlockRegex = /(```[\s\S]*?```)/g;
+  const blocks = text.split(codeBlockRegex);
+
+  return blocks.map((block, bIdx) => {
+    if (block.startsWith('```') && block.endsWith('```')) {
+      const firstLineEnd = block.indexOf('\n');
+      let lang = '';
+      let code = '';
+
+      if (firstLineEnd !== -1) {
+        lang = block.slice(3, firstLineEnd).trim();
+        code = block.slice(firstLineEnd + 1, -3);
+      } else {
+        code = block.slice(3, -3);
+      }
+
+      return (
+        <div key={bIdx} className="my-2.5 rounded-xl bg-[#070c18] border border-cyan-900/50 overflow-hidden max-w-full">
+          {lang && (
+            <div className="px-3 py-1 bg-cyan-950/60 border-b border-cyan-900/40 text-[10px] text-cyan-400 font-mono uppercase tracking-wider">
+              {lang}
+            </div>
+          )}
+          <div className="p-3 overflow-x-auto custom-scrollbar max-w-full">
+            <pre className="text-xs font-mono text-cyan-300 leading-relaxed whitespace-pre font-normal m-0">
+              <code>{code.trim()}</code>
+            </pre>
+          </div>
+        </div>
+      );
     }
 
+    // Process normal text lines
+    const lines = block.split('\n');
     return (
-      <p key={i} className="text-sm text-gray-200 leading-relaxed mb-1">
-        {lineContent}
-      </p>
+      <div key={bIdx} className="w-full">
+        {lines.map((line, i) => {
+          if (line.startsWith('* ') || line.startsWith('- ')) {
+            return (
+              <li key={i} className="ml-4 list-disc text-sm text-gray-200 leading-relaxed my-0.5 break-words [overflow-wrap:anywhere]">
+                {formatInlineText(line.slice(2))}
+              </li>
+            );
+          }
+
+          if (line.trim() === '') {
+            return <div key={i} className="h-2" />;
+          }
+
+          return (
+            <p key={i} className="text-sm text-gray-200 leading-relaxed mb-1 break-words [overflow-wrap:anywhere]">
+              {formatInlineText(line)}
+            </p>
+          );
+        })}
+      </div>
     );
   });
 }
@@ -46,10 +105,10 @@ export default function ChatMessage({ message }) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`flex flex-col mb-4 ${isUser ? 'items-end' : 'items-start'}`}
+      className={`flex flex-col mb-4 w-full ${isUser ? 'items-end' : 'items-start'}`}
     >
       <div
-        className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-md ${
+        className={`max-w-[90%] sm:max-w-[85%] rounded-2xl px-4 py-3 shadow-md overflow-hidden min-w-0 ${
           isUser
             ? 'bg-cyan-500/25 border border-cyan-400/40 text-white rounded-br-none'
             : 'bg-[#131d33] border border-cyan-900/40 text-gray-200 rounded-bl-none'
@@ -57,14 +116,14 @@ export default function ChatMessage({ message }) {
       >
         {!isUser && (
           <div className="flex items-center gap-2 mb-2">
-            <div className="w-5 h-5 rounded-full bg-cyan-500/20 flex items-center justify-center border border-cyan-500/30">
+            <div className="w-5 h-5 rounded-full bg-cyan-500/20 flex items-center justify-center border border-cyan-500/30 shrink-0">
               <span className="text-[10px] text-cyan-400 font-bold">T</span>
             </div>
             <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Taha AI</span>
           </div>
         )}
         
-        <div className="whitespace-pre-wrap font-medium">
+        <div className="whitespace-pre-wrap font-medium break-words [overflow-wrap:anywhere] min-w-0 max-w-full">
           {formatText(message.content)}
         </div>
       </div>

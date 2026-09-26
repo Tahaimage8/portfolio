@@ -72,10 +72,10 @@ export default function TahaAIWidget() {
   const handleSendMessage = async (customText = null) => {
     const textToSend = customText || input;
     if (!textToSend.trim() || isLoading || isRequesting.current) return;
-    
+
     isRequesting.current = true;
     setInput("");
-    
+
     const newUserMessage = { role: 'user', content: textToSend };
     const newHistory = [...messages, newUserMessage];
     setMessages(newHistory);
@@ -90,7 +90,7 @@ export default function TahaAIWidget() {
       });
 
       const data = await res.json();
-      
+
       if (!res.ok) {
         throw new Error(data.message || "Failed to fetch response");
       }
@@ -102,8 +102,8 @@ export default function TahaAIWidget() {
       }
 
     } catch (err) {
-      setMessages(prev => [...prev, { 
-        role: 'model', 
+      setMessages(prev => [...prev, {
+        role: 'model',
         content: err.message || "I'm having trouble connecting right now. Please try again later.",
         contactCta: true
       }]);
@@ -147,10 +147,11 @@ export default function TahaAIWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] w-[calc(100vw-48px)] sm:w-[400px] h-[600px] max-h-[calc(100vh-100px)] rounded-3xl border border-cyan-900/40 shadow-[0_20px_50px_rgba(0,0,0,0.9)] flex flex-col overflow-hidden bg-[#080d1a]/98 backdrop-blur-2xl"
+            onWheel={(e) => e.stopPropagation()}
+            className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[100] w-[calc(100vw-32px)] sm:w-[400px] h-[580px] max-h-[calc(100vh-80px)] rounded-3xl border border-cyan-900/40 shadow-[0_20px_50px_rgba(0,0,0,0.9)] flex flex-col overflow-hidden bg-[#080d1a]/98 backdrop-blur-2xl [touch-action:pan-y]"
           >
             {/* Header */}
-            <div className="p-4 border-b border-cyan-900/30 flex items-center justify-between bg-[#0d1527]/90 backdrop-blur-md">
+            <div className="p-4 border-b border-cyan-900/30 flex items-center justify-between bg-[#0d1527]/90 backdrop-blur-md shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
                   <HiOutlineChatAlt2 className="text-cyan-400" size={20} />
@@ -170,11 +171,14 @@ export default function TahaAIWidget() {
             </div>
 
             {/* Messages Area */}
-            <div className="flex-1 relative overflow-y-auto p-4 custom-scrollbar flex flex-col bg-[#080d1a]">
+            <div
+              onWheel={(e) => e.stopPropagation()}
+              className="flex-1 relative overflow-y-auto p-4 custom-scrollbar flex flex-col bg-[#080d1a] overscroll-contain [touch-action:pan-y]"
+            >
               {messages.map((msg, i) => (
                 <ChatMessage key={i} message={msg} />
               ))}
-              
+
               {isLoading && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -194,12 +198,12 @@ export default function TahaAIWidget() {
               {!isLoading && messages[messages.length - 1].role === 'model' && (
                 <QuickActions onAction={handleAction} />
               )}
-              
+
               <div ref={messagesEndRef} />
             </div>
 
             {/* Input Area */}
-            <div className="p-4 border-t border-cyan-900/30 bg-[#0d1527]/90 backdrop-blur-md">
+            <div className="p-4 border-t border-cyan-900/30 bg-[#0d1527]/90 backdrop-blur-md shrink-0">
               <form
                 onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
                 className="flex items-center gap-2 relative"

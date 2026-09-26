@@ -14,20 +14,20 @@ const Hero = memo(() => {
   return (
     <section id="home" className="relative overflow-hidden py-20 md:py-28">
       {/* Background Orbs */}
-      <motion.div 
-        animate={{ y: [0, -40, 0], scale: [1, 1.1, 1] }} 
+      <motion.div
+        animate={{ y: [0, -40, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none will-change-transform" 
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none will-change-transform"
       />
-      <motion.div 
-        animate={{ y: [0, 40, 0], scale: [1, 1.2, 1] }} 
+      <motion.div
+        animate={{ y: [0, 40, 0], scale: [1, 1.2, 1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none will-change-transform" 
+        className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none will-change-transform"
       />
 
       <Container className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 min-h-screen">
-          
+
           {/* Left Content */}
           <motion.div
             initial="hidden"
@@ -51,8 +51,8 @@ const Hero = memo(() => {
                 Available for Projects
               </span>
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-8 will-change-[opacity,transform]"
@@ -61,17 +61,17 @@ const Hero = memo(() => {
               <span className="text-gradient">Web Experiences</span> <br />
               With Clean Code
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-gray-400 text-base md:text-lg leading-7 mb-12 max-w-2xl mx-auto lg:mx-0 font-medium will-change-[opacity,transform]"
             >
-              I’m Ibtasam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Software Engineer</span>. 
+              I’m Ibtasam Taha, a passionate <span className="text-white font-bold mx-1">Full Stack Software Engineer</span>.
               I craft responsive and modern web applications with a focus on clean UI and performance.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-wrap justify-center lg:justify-start gap-5 mb-16 will-change-[opacity,transform]"
@@ -103,9 +103,9 @@ const Hero = memo(() => {
                 Download CV <FiDownload size={20} className="group-hover:translate-y-1 transition-transform" />
               </motion.a>
             </motion.div>
-            
+
             {/* Stats */}
-            <motion.div 
+            <motion.div
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0 pt-12 border-t border-white/5 will-change-[opacity,transform]"
@@ -132,7 +132,7 @@ const Hero = memo(() => {
           >
             {/* Background Glows */}
             <div className="absolute w-[80%] h-[80%] bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 rounded-full blur-[100px] animate-pulse" />
-            
+
             {/* Floating Elements */}
             <motion.div
               animate={{ y: [0, -20, 0] }}
@@ -178,7 +178,7 @@ const Hero = memo(() => {
           </motion.div>
         </div>
       </Container>
-      
+
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
